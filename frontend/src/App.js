@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import Welcome from "./components/Welcome";
+import About from "./components/About"
 
 
 
@@ -9,6 +10,7 @@ function App() {
     {/* // <Navbar /> */}
     <Routes>
        <Route path="/" element={<Welcome /> } />
+       <Route path="/about" element ={<About />} />
 
       </Routes>
       {/* // <Footer /> */}

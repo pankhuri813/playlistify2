@@ -1,6 +1,6 @@
 *{
   overflow-y: hidden;
-  overflow-x: hidden;
+  
 }
 .welcome {
   position: relative;
@@ -50,6 +50,7 @@
   width: 10rem;
   height: 4.38rem;
   display: flex;
+  overflow-x: hidden;
 }
 
 .login,
