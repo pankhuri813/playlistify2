@@ -1,0 +1,257 @@
+.about,
+.playlistiy {
+  position: relative;
+}
+.playlistiy {
+  font-size: var(--font-size-41xl);
+  font-family: var(--font-italianno);
+  display: inline-block;
+  width: 20.25rem;
+  flex-shrink: 0;
+}
+.love-icon,
+.user-icon {
+  position: relative;
+  width: 4rem;
+  height: 4rem;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.user-icon {
+  width: 3.75rem;
+  height: 5.63rem;
+}
+.navbar {
+  position: absolute;
+  top: 0;
+  left: -0.25rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  padding: 0 var(--padding-10xl);
+  align-items: center;
+  justify-content: center;
+  gap: 11.69rem;
+  font-size: var(--font-size-17xl);
+}
+.homepage-child {
+  position: absolute;
+  top: 6.75rem;
+  left: 0;
+  background-color: var(--color-mistyrose);
+  width: 94.5rem;
+  height: 21rem;
+}
+.homepage-inner,
+.homepage-item {
+  position: absolute;
+  top: 8.88rem;
+  left: 10.44rem;
+  width: 23.19rem;
+  height: 16.75rem;
+  object-fit: cover;
+}
+.homepage-inner {
+  top: 13.06rem;
+  left: 17rem;
+  width: 24.5rem;
+  height: 16.31rem;
+}
+.rectangle-div {
+  position: absolute;
+  top: 8.44rem;
+  left: 48.38rem;
+  background-color: var(--color-white);
+  width: 33.19rem;
+  height: 4.63rem;
+}
+.it-is-a {
+  position: absolute;
+  top: 9.5rem;
+  left: 49.06rem;
+}
+.homepage-child1,
+.homepage-child2 {
+  position: absolute;
+  top: 14.94rem;
+  left: 55.88rem;
+  background-color: var(--color-white);
+  width: 25.69rem;
+  height: 4.63rem;
+}
+.homepage-child2 {
+  top: 21.19rem;
+  left: 61.31rem;
+  width: 20.25rem;
+}
+.it-is-long {
+  position: absolute;
+  top: 22.44rem;
+  left: 62.13rem;
+  display: inline-block;
+  width: 20.19rem;
+}
+.it-is-a1 {
+  position: absolute;
+  top: 16rem;
+  left: 56.56rem;
+}
+.steps-child,
+.text {
+  position: absolute;
+  top: 12.06rem;
+  left: 3.06rem;
+}
+.text {
+  top: 16.81rem;
+  left: 5.94rem;
+}
+.lorem-ipsum-has,
+.steps-item {
+  position: absolute;
+  top: 16.25rem;
+  left: 8.13rem;
+}
+.steps-item {
+  top: 12.06rem;
+  left: 65.38rem;
+}
+.industrys-standard-dummy {
+  margin: 0;
+}
+.lorem-ipsum-has-container,
+.steps-inner {
+  position: absolute;
+  top: 15.44rem;
+  left: 69.94rem;
+}
+.steps-inner {
+  top: 12.06rem;
+  left: 34.5rem;
+}
+.ellipse-icon,
+.steps-child1 {
+  position: absolute;
+  top: 4.81rem;
+  left: 9.88rem;
+  width: 12.81rem;
+  height: 11rem;
+}
+.steps-child1 {
+  left: 72.5rem;
+}
+.div {
+  position: absolute;
+  top: 7.56rem;
+  left: 77.88rem;
+  font-size: var(--font-size-41xl);
+}
+.steps-child2 {
+  position: absolute;
+  top: 4.81rem;
+  left: 41.5rem;
+  width: 12.81rem;
+  height: 11rem;
+}
+.div1,
+.div2 {
+  position: absolute;
+  top: 7.63rem;
+  left: 15.31rem;
+}
+.div2 {
+  left: 46.94rem;
+  font-size: var(--font-size-41xl);
+}
+.lorem-ipsum-has-container1 {
+  position: absolute;
+  top: 16.25rem;
+  left: 38.5rem;
+}
+.steps {
+  position: absolute;
+  top: 75.38rem;
+  left: 0;
+  width: 94.25rem;
+  height: 36.63rem;
+  overflow: hidden;
+  font-size: var(--font-size-6xl);
+}
+.browse-the-categories {
+  position: absolute;
+  top: 0.94rem;
+  left: 28.63rem;
+  font-size: var(--font-size-41xl);
+  text-decoration: underline;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-text-stroke: 1px #000;
+}
+.types-child,
+.types-inner,
+.types-item {
+  position: absolute;
+  top: 13.88rem;
+  left: 5.31rem;
+  width: 23.31rem;
+  height: 21.63rem;
+  object-fit: cover;
+}
+.types-inner,
+.types-item {
+  left: 67.25rem;
+}
+.types-inner {
+  left: 36.25rem;
+}
+.types-child1 {
+  position: absolute;
+  top: 33.25rem;
+  left: 8.88rem;
+}
+.dance,
+.types-child2,
+.types-child3 {
+  position: absolute;
+  top: 33.38rem;
+  left: 70.75rem;
+}
+.dance,
+.types-child3 {
+  left: 40.94rem;
+}
+.dance {
+  top: 33.88rem;
+  left: 13rem;
+}
+.cooking {
+  top: 34.19rem;
+  left: 44.19rem;
+}
+.cooking,
+.drawing,
+.types {
+  position: absolute;
+}
+.drawing {
+  top: 34.19rem;
+  left: 74rem;
+}
+.types {
+  top: 30.69rem;
+  left: 0;
+  width: 94.5rem;
+  height: 39.81rem;
+  overflow: hidden;
+  font-size: var(--font-size-16xl);
+}
+.homepage {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 125.88rem;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-15xl);
+  color: var(--color-black);
+  font-family: var(--font-itim);
+}
