@@ -12,16 +12,16 @@
 .love-icon,
 .user-icon {
   position: relative;
-  width: 4rem;
-  height: 4rem;
+  width: 2rem;
+  height: 2.5rem;
   flex-shrink: 0;
   object-fit: cover;
 }
 .user-icon {
   width: 3.75rem;
-  height: 5.63rem;
+  height: 3.63rem;
 }
-.navbar {
+/* .navbar {
   position: absolute;
   top: 0;
   left: -0.25rem;
@@ -33,12 +33,12 @@
   justify-content: center;
   gap: 11.69rem;
   font-size: var(--font-size-17xl);
-}
+} */
 .homepage-child {
   position: absolute;
   top: 6.75rem;
   left: 0;
-  background-color: var(--color-mistyrose);
+  background-color:#EEDBDB;
   width: 94.5rem;
   height: 21rem;
 }

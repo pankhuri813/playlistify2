@@ -1,25 +1,23 @@
 import "./About.css";
 
-const About = () => {
+const Aboutpage = () => {
   return (
-    <div className="about">
+    <div className="aboutpage">
       <nav className="navbar">
-        <div className="about-link">About</div>
-        <div className="home-link">Home</div>
-        <div className="playlistiy-link">Playlistiy</div>
-        <img className="icon love-icon" alt="" src="./Images/hearticon.png" />
-        <img className="icon user-icon" alt="" src="./Images/usericon.png" />
+        <div className="about">About</div>
+        <div className="about">Home</div>
+        <div className="playlistiy">Playlistify</div>
+        <img className="love-icon" alt="" src="./Images/hearticon.png" />
+        <img className="user-icon" alt="" src="./Images/usericon.png" />
       </nav>
-      <div className="about-content">
-        <div className="about-heading">About
-          <p className="about-text">It is a long established fact that a reader will be distracted by the readable content</p>
-        </div>
-        <div className="about-image">
-          <img alt="" src="./Images/aboutImage.jpg" />
-        </div>
+      <div className="aboutpage-child" />
+      <div className="about1"> <b>About</b> </div>
+      <img className="aboutpage-item" alt="" src="./Images/aboutImage.jpg" />
+      <div className="it-is-a-about-container">
+        <p className="it-is-a-about">It is a long established <br /> fact that a reader <br /> will be distracted by <br /> the readable content</p>
       </div>
     </div>
   );
 };
 
-export default About;
+export default Aboutpage;

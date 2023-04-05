@@ -1,7 +1,7 @@
-*{
+/* *{
   overflow-y: hidden;
   
-}
+} */
 .welcome {
   position: relative;
   background-color: #fff;
@@ -72,8 +72,8 @@
 
 .text {
   position: absolute;
-  top: 25.25rem;
-  left: 55.69rem;
+  top: 24.81rem;
+  left: 56.94rem;
   font-family: "Inter", sans-serif;
   font-size: 1.5rem;
   line-height: 1.5;

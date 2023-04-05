@@ -1,0 +1,122 @@
+.about,
+.playlistiy {
+  position: relative;
+}
+.playlistiy {
+  font-size: var(--font-size-41xl);
+  font-family: var(--font-italianno);
+  display: inline-block;
+  width: 20.25rem;
+  flex-shrink: 0;
+}
+.love-icon,
+.user-icon {
+  position: relative;
+  width: 4rem;
+  height: 4rem;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.user-icon {
+  width: 3.75rem;
+  height: 5.63rem;
+}
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  padding: 0 var(--padding-10xl);
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-177xl);
+}
+.dance-categories {
+  position: absolute;
+  top: 8.94rem;
+  left: 35.25rem;
+  font-size: 3rem;
+  text-decoration: underline;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.75);
+  -webkit-text-stroke: 1px #000;
+}
+.categorypage-child,
+.categorypage-child1,
+.categorypage-inner,
+.categorypage-item,
+.rectangle-div {
+  position: absolute;
+  top: 16.5rem;
+  left: 2.13rem;
+  border-radius: var(--br-31xl);
+  background-color: #EEDBDB;
+  width: 28.13rem;
+  height: 20.88rem;
+}
+.categorypage-child1,
+.categorypage-inner,
+.categorypage-item,
+.rectangle-div {
+  top: 16.56rem;
+  left: 33rem;
+}
+.categorypage-child1,
+.categorypage-inner,
+.rectangle-div {
+  top: 41.69rem;
+  left: 34.38rem;
+}
+.categorypage-child1,
+.rectangle-div {
+  left: 2.13rem;
+}
+.categorypage-child1 {
+  top: 16.56rem;
+  left: 64.56rem;
+}
+.categorypage-child2,
+.categorypage-child3,
+.categorypage-child4,
+.categorypage-child5,
+.rectangle-icon {
+  position: absolute;
+  top: 18.63rem;
+  left: 3.63rem;
+  border-radius: var(--br-11xl);
+  width: 24.63rem;
+  height: 16.75rem;
+  object-fit: cover;
+}
+.categorypage-child2,
+.categorypage-child3,
+.categorypage-child4,
+.categorypage-child5 {
+  top: 43.75rem;
+  left: 36.13rem;
+}
+.categorypage-child3,
+.categorypage-child4,
+.categorypage-child5 {
+  left: 3.63rem;
+}
+.categorypage-child4,
+.categorypage-child5 {
+  top: 18.56rem;
+  left: 66.31rem;
+}
+.categorypage-child5 {
+  left: 34.75rem;
+}
+.categorypage {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 71.06rem;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-17xl);
+  color: var(--color-black);
+  font-family: var(--font-itim);
+}
