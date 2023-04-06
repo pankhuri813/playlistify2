@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+
+.about,
+.playlistiy {
+  position: relative;
+  font-size: 21px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #000;
+  text-align: left;
+}
+.playlistify {
+  font-size: 30px;
+  font-family: 'Italianno';
+  display: inline-block;
+  width: 20.25rem;
+  flex-shrink: 0;
+  padding-left: 190px;
+}
+.love-icon,
+.user-icon {
+  position: relative;
+  width: 2.5rem;
+  height:2.5rem;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.love-icon{
+    width: 2.75rem;
+    height: 2.5rem;
+}
+.user-icon {
+  width: 2.75rem;
+  height: 3.5rem;
+}
+.navbar-about {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 97.5rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  padding: 0 8px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  gap: 11.5rem;
+  border-bottom: 1px solid black;
+}

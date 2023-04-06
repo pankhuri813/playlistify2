@@ -1,4 +1,4 @@
-.about,
+/* .about,
 .playlistiy {
   position: relative;
 }
@@ -32,7 +32,7 @@
   align-items: center;
   justify-content: center;
   gap: var(--gap-177xl);
-}
+} */
 .dance-categories {
   position: absolute;
   top: 8.94rem;

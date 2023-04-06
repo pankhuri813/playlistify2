@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
 
 .about,
 .playlistiy {
@@ -8,7 +8,7 @@
   color: black;
   text-align: left;
 }
-.playlistiy {
+.playlistify {
   font-size: 30px;
   font-family: 'Italianno', cursive;
   display: inline-block;
@@ -25,10 +25,10 @@
   object-fit: cover;
 }
 .user-icon {
-  width: 3.75rem;
-  height: 5.63rem;
+  width: 2.75rem;
+  height: 3.63rem;
 }
-.navbar {
+.navbar-about {
   position: absolute;
   top: 0;
   left: 0;
@@ -41,7 +41,7 @@
   align-items: center;
   justify-content: center;
   gap: 11.5rem;
-}
+} */
 .aboutpage-child {
   position: absolute;
   top: 18.06rem;
@@ -86,3 +86,5 @@
   color: black;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
+
