@@ -1,15 +1,17 @@
 import "./About.css";
+    import Navbar from "../Navbar and footer/Navbar";
 
 const Aboutpage = () => {
   return (
     <div className="aboutpage">
-      <nav className="navbar">
+      <Navbar />
+      {/* <nav className="navbar-about">
         <div className="about">About</div>
         <div className="about">Home</div>
-        <div className="playlistiy">Playlistify</div>
+        <div className="playlistify">Playlistify</div>
         <img className="love-icon" alt="" src="./Images/hearticon.png" />
         <img className="user-icon" alt="" src="./Images/usericon.png" />
-      </nav>
+      </nav> */}
       <div className="aboutpage-child" />
       <div className="about1"> <b>About</b> </div>
       <img className="aboutpage-item" alt="" src="./Images/aboutImage.jpg" />

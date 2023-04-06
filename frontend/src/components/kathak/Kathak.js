@@ -1,7 +1,9 @@
 import { useState, useEffect} from "react";
+import VideoCard from "./VideoCard/VideoCard"
+import "./Kathak.css"
 
 const Kathak = () => {
-    const [link, setlink] = useState("");
+    const [link, setLink] = useState("");
     const [rpp, setRPP] = useState(10);
     const [isFav,setIsFav] = useState(false);
     const [id, setId] = useState("");
@@ -48,7 +50,10 @@ const Kathak = () => {
      console.log(err);
 
      return (
+
+        
         <div className="kathak-container">
+     {/* **       <div className="kathak">{`Kathak `}</div> */}
             <div className="hero-section">
                 <h1 className="heading">Kathak</h1>
                 <div className="hero-main">
@@ -70,9 +75,10 @@ const Kathak = () => {
                             type="text"
                             className="playlist-link"
                             placeholder="Playlist URL"
-                            onchange = {(e) => setlink(e.target.value)}
+                            onChange = {(e) => setLink(e.target.value)}
                             value={link}
                             />
+                            {console.log(link)}
                             <button type="submit" className="add-btn">
                                 Add
                             </button>
@@ -107,7 +113,7 @@ const Kathak = () => {
         {videos.map((e,i) => {
             return (
                 <>
-                {/* <VideoCard  */}
+                <VideoCard 
                 key ={i}
                 title = {e.snippet.title}
                 thumbnail ={
@@ -116,7 +122,7 @@ const Kathak = () => {
                     : "/Images/img-not-found.png"
                 }
                 channel ={e.snippet.channelTitle} 
-                {/* /> */}
+                />
                 </>
             );
         })}

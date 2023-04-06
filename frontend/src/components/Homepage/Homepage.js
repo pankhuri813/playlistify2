@@ -3,23 +3,23 @@ import "./Homepage.css";
 const Homepage = () => {
   return (
     <div className="homepage">
-      <nav className="navbar">
+      {/* <nav className="navbar">
         <div className="about-link">About</div>
         <div className="home-link">Home</div>
         <div className="playlistiy-link">Playlistiy</div>
         <img className="icon love-icon" alt="" src="./Images/hearticon.png" />
         <img className="icon user-icon" alt="" src="./Images/usericon.png" />
-      </nav>
+      </nav> */}
       <div className="homepage-child" />
       <img className="homepage-item" alt="" src="./Images/background.jpg" />
       <img className="homepage-inner" alt="" src="./Images/laptop.jpg" />
       
-      <div className="rectangle-div" />
-      <div className="it-is-a">It is a long established fact that a</div>
+      {/* <div className="rectangle-div" /> */}
+      <div className="heading-homepage">It is a long established fact that a</div>
       <div className="homepage-child1" />
       <div className="homepage-child2" />
-      <div className="it-is-long">It is long established</div>
-      <div className="it-is-a1">It is a long established fact</div>
+      <div className="heading-homepage2">It is long established</div>
+      <div className="heading-homepage3">It is a long established fact</div>
        {/* <div className="steps">
         <div className="steps-child" />
         <div className="text" />
@@ -66,6 +66,7 @@ const Homepage = () => {
         <div className="cooking">COOKING</div>
         <div className="drawing">DRAWING</div>
       </div>
+         <div className="steps-1" />
     </div>
   );
 };

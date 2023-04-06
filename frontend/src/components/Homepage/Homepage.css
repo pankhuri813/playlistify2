@@ -1,4 +1,4 @@
-.about,
+/* .about,
 .playlistiy {
   position: relative;
 }
@@ -20,7 +20,7 @@
 .user-icon {
   width: 3.75rem;
   height: 3.63rem;
-}
+} */
 /* .navbar {
   position: absolute;
   top: 0;
@@ -57,15 +57,15 @@
   width: 24.5rem;
   height: 16.31rem;
 }
-.rectangle-div {
+.steps-1 {
   position: absolute;
   top: 8.44rem;
   left: 48.38rem;
-  background-color: var(--color-white);
+  background-color: white;
   width: 33.19rem;
   height: 4.63rem;
 }
-.it-is-a {
+.heading-homepage {
   position: absolute;
   top: 9.5rem;
   left: 49.06rem;
@@ -75,7 +75,7 @@
   position: absolute;
   top: 14.94rem;
   left: 55.88rem;
-  background-color: var(--color-white);
+  background-color: white;
   width: 25.69rem;
   height: 4.63rem;
 }
@@ -84,14 +84,14 @@
   left: 61.31rem;
   width: 20.25rem;
 }
-.it-is-long {
+.heading-homepage2 {
   position: absolute;
   top: 22.44rem;
   left: 62.13rem;
   display: inline-block;
   width: 20.19rem;
 }
-.it-is-a1 {
+.heading-homepage {
   position: absolute;
   top: 16rem;
   left: 56.56rem;
@@ -207,6 +207,7 @@
   position: absolute;
   top: 33.25rem;
   left: 8.88rem;
+  width: 3rem;
 }
 .dance,
 .types-child2,
@@ -214,6 +215,9 @@
   position: absolute;
   top: 33.38rem;
   left: 70.75rem;
+  background-color: #EEDBDB;
+  width: 11rem;
+  height: 3rem;
 }
 .dance,
 .types-child3 {
