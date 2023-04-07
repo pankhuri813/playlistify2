@@ -2,6 +2,15 @@ import { useState, useEffect} from "react";
 import VideoCard from "./VideoCard/VideoCard"
 import "./Kathak.css"
 
+
+const data ={
+    kathak:{ 
+        titile:"kathak",
+        video:""
+    }
+}
+
+
 const Kathak = () => {
     const [link, setLink] = useState("");
     const [rpp, setRPP] = useState(10);
@@ -10,7 +19,7 @@ const Kathak = () => {
     const [videos, setVideos] = useState([]);
     const [err, setErr] = useState("");
 
-
+    const type="kathak"
     useEffect(() => {
         if (!id) {
             return;
@@ -55,13 +64,13 @@ const Kathak = () => {
         <div className="kathak-container">
      {/* **       <div className="kathak">{`Kathak `}</div> */}
             <div className="hero-section">
-                <h1 className="heading">Kathak</h1>
+                <h1 className="heading">{data[type].title}</h1>
                 <div className="hero-main">
                     <div className="suggested-video">
                     <iframe
               width="560"
               height="315"
-              src="https://www.youtube.com/embed/videoseries?list=PLGubwXfO9n-sIT4z3WQJD3G4yXI6RR6J5"
+              src={`https://www.youtube.com/embed/videoseries?list=${data[type].video}`}
               title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

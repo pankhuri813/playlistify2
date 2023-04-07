@@ -45,5 +45,5 @@
   align-items: center;
   justify-content: center;
   gap: 11.5rem;
-  border-bottom: 1px solid black;
+  border-bottom: 1px dotted black;
 }
