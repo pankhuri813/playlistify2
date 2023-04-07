@@ -69,6 +69,8 @@
   position: absolute;
   top: 9.5rem;
   left: 49.06rem;
+  display: inline-block;
+  font-size: large;
 }
 .homepage-child1,
 .homepage-child2 {
@@ -90,22 +92,23 @@
   left: 62.13rem;
   display: inline-block;
   width: 20.19rem;
+  font-size: medium;
 }
 .heading-homepage {
   position: absolute;
   top: 16rem;
   left: 56.56rem;
 }
-.steps-child,
+/* .steps-child,
 .text {
   position: absolute;
   top: 12.06rem;
   left: 3.06rem;
-}
-.text {
+} */
+/* .text {
   top: 16.81rem;
   left: 5.94rem;
-}
+} */
 .lorem-ipsum-has,
 .steps-item {
   position: absolute;
@@ -179,11 +182,11 @@
 }
 .browse-the-categories {
   position: absolute;
-  top: 0.94rem;
-  left: 28.63rem;
-  font-size: var(--font-size-41xl);
+  top: 3.5rem;
+  left: 32.7rem;
+  font-size: 3rem;
   text-decoration: underline;
-  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.75);
   -webkit-text-stroke: 1px #000;
 }
 .types-child,
@@ -214,31 +217,39 @@
 .types-child3 {
   position: absolute;
   top: 33.38rem;
-  left: 70.75rem;
+  left: 73.75rem;
   background-color: #EEDBDB;
   width: 11rem;
   height: 3rem;
 }
 .dance,
 .types-child3 {
-  left: 40.94rem;
+  left: 42.5rem;
 }
 .dance {
   top: 33.88rem;
-  left: 13rem;
+  left: 11rem;
+}
+.div.dance{
+  left: 2rem;
 }
 .cooking {
   top: 34.19rem;
-  left: 44.19rem;
+  left: 45.5rem;
+}
+.dance-text{
+   top: 34.7rem;
+  left: 14.5rem;
 }
 .cooking,
 .drawing,
-.types {
+.types,
+.dance-text {
   position: absolute;
 }
 .drawing {
   top: 34.19rem;
-  left: 74rem;
+  left: 77rem;
 }
 .types {
   top: 30.69rem;
@@ -255,7 +266,69 @@
   height: 125.88rem;
   overflow: hidden;
   text-align: left;
-  font-size: var(--font-size-15xl);
-  color: var(--color-black);
-  font-family: var(--font-itim);
+  font-size: 1rem;
+  color: black;
+  font-family: itim;
 }
+.heading-homepage3{
+  position: absolute;
+  top: 10rem;
+  left: 49rem;
+  font-size: larger;
+}
+  .process-2{
+    position: absolute;
+    background-color: #EEDBDB;
+    height: 21rem;
+    width: 23.5rem;
+    left: 36.31rem;
+    top: 85rem;
+  }
+
+  .process-1{
+    position: absolute;
+    background-color: #EEDBDB;
+    height: 21rem;
+    width: 23.5rem;
+    left: 5.31rem;
+    top: 85rem;
+  }
+
+  .process-3{
+    position: absolute;
+    background-color: #EEDBDB;
+    height: 21rem;
+    width: 23.5rem;
+    left: 67.25rem;
+    top: 85rem;
+  }
+
+  .circle-1{
+    position: absolute;
+    background-color: #EEDBDB;
+    height: 7rem;
+    width: 8rem;
+    top: 80rem;
+    left: 13rem;
+    border-radius: 100%;
+  }
+  .circle-2{
+    position: absolute;
+    background-color: #EEDBDB;
+    height: 7rem;
+    width: 8rem;
+    top: 80rem;
+    left: 44rem;
+    border-radius: 100%;
+  }
+  .circle-3{
+    position: absolute;
+    background-color: #EEDBDB;
+    height: 7rem;
+    width: 8rem;
+    top: 80rem;
+    left: 75rem;
+    border-radius: 100%;
+  }
+
+
