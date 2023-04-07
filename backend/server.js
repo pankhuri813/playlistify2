@@ -1,6 +1,7 @@
 const express = require("express")
-// const mongoose = require("mongoose")
-
+const mongoose = require("mongoose")
+const router =require("./routes/post")
+require( "dotenv").config();
 
 const postRequest = require('./routes/post')
 
@@ -14,7 +15,7 @@ app.use(express.json())
 // app.use('/api/post', postRequest);
 
 
-// mongoose.connect()
+mongoose.connect(process.env.MONGO_URI)
 
 
 app.post("/test", (req,res) =>{
@@ -30,6 +31,9 @@ app.get("/gtest", (req,res) => {
     res.send("oejchfye")
     
 })
+
+app.use(router);
+
 app.listen(5000)
 
 
