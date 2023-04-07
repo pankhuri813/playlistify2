@@ -1,5 +1,5 @@
 const express = require("express")
-const Favorite = require("../models/favorite")
+const Favorite = require("../favorite.js")
 
 const router = express.Router()
 
