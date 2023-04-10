@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { type } = require("os");
 const Schema = mongoose.Schema
 
 const favoriteSchema = new Schema({
@@ -6,13 +7,14 @@ const favoriteSchema = new Schema({
     userId: {
         type: String,
         required: true
-    }, 
-   favorite:[
-        {
-            category: String,
-            playlist: String
-        }
-    ]
+    },
+    name:{
+        type:String
+    },
+   favorite:{
+        type:Array,
+        default:[]
+   }
 });
 
-module.exports = mongoose.model('Favorite', favoriteSchema)
+module.exports = mongoose.model('User', favoriteSchema)

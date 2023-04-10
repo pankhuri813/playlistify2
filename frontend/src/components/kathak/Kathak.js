@@ -3,12 +3,12 @@ import VideoCard from "./VideoCard/VideoCard"
 import "./Kathak.css"
 
 
-const data ={
-    kathak:{ 
-        titile:"kathak",
-        video:""
-    }
-}
+// const data ={
+//     kathak:{ 
+//         titile:"kathak",
+//         video:""
+//     }
+// }
 
 
 const Kathak = () => {
@@ -19,7 +19,7 @@ const Kathak = () => {
     const [videos, setVideos] = useState([]);
     const [err, setErr] = useState("");
 
-    const type="kathak"
+    // const type="kathak"
     useEffect(() => {
         if (!id) {
             return;
@@ -45,9 +45,20 @@ const Kathak = () => {
         if (playlistId && playlistId.match(/^[\w-]+$/)) {
          console.log("Playlist ID: ", playlistId);
             setId(playlistId);
+            // //post request to backend
+            // fetch('/favorites', {
+            //     method: 'PUT',
+            //     headers: {'Content-Type': 'application/json'},
+            //     body: JSON.stringify({userId:localStorage.getItem("sub"), playlistId})
+            // })
+            // .then(response => response.json())
+            // .then(data => {
+            //     console.log('POST response:', data);
+            // })
+            // .catch(error => console.error(error));
+
     } else {
-        setErr("Invalid Youtube Playlist link");
-        
+        setErr("Invalid Youtube Playlist link"); 
              }
      }
    
@@ -64,13 +75,13 @@ const Kathak = () => {
         <div className="kathak-container">
      {/* **       <div className="kathak">{`Kathak `}</div> */}
             <div className="hero-section">
-                <h1 className="heading">{data[type].title}</h1>
+                <h1 className="heading">Kathak</h1>
                 <div className="hero-main">
                     <div className="suggested-video">
                     <iframe
               width="560"
               height="315"
-              src={`https://www.youtube.com/embed/videoseries?list=${data[type].video}`}
+              src={`https://www.youtube.com/embed/videoseries?list=PLWlTX25IDqIwqowTsJmGhqxUWU_6qgG1W&index=1`}
               title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -125,7 +136,7 @@ const Kathak = () => {
                 <VideoCard 
                 key ={i}
                 title = {e.snippet.title}
-                thumbnail ={
+                thumbnail ={                                                                                                  
                     e.snippet.thumbnails.high
                     ? e.snippet.thumbnails.high.url
                     : "/Images/img-not-found.png"

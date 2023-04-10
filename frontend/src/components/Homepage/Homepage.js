@@ -1,9 +1,12 @@
 import "./Homepage.css";
+import Profile from "../Auth0/Profile";
+import LogoutButton from "../Auth0/Logout";
+
 
 const Homepage = () => {
   return (
     <div className="homepage">
-      
+       <Profile />
       <div className="homepage-child" />
       <div className="steps-1" />
       <div className="heading-homepage3">It is a long established fact</div>
@@ -35,6 +38,9 @@ const Homepage = () => {
          <div className="circle-2"></div>
          <div className="process-3"></div>
          <div className="circle-3"></div>
+        
+         <LogoutButton />
+         <Profile/>
     </div>
   );
 };

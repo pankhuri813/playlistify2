@@ -1,38 +1,4 @@
-/* .about,
-.playlistiy {
-  position: relative;
-}
-.playlistiy {
-  font-size: var(--font-size-41xl);
-  font-family: var(--font-italianno);
-  display: inline-block;
-  width: 20.25rem;
-  flex-shrink: 0;
-}
-.love-icon,
-.user-icon {
-  position: relative;
-  width: 4rem;
-  height: 4rem;
-  flex-shrink: 0;
-  object-fit: cover;
-}
-.user-icon {
-  width: 3.75rem;
-  height: 5.63rem;
-}
-.navbar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  padding: 0 var(--padding-10xl);
-  align-items: center;
-  justify-content: center;
-  gap: var(--gap-177xl);
-} */
+
 .dance-categories {
   position: absolute;
   top: 8.94rem;
@@ -50,7 +16,7 @@
   position: absolute;
   top: 16.5rem;
   left: 2.13rem;
-  border-radius: var(--br-31xl);
+  /* border-radius: var(--br-31xl); */
   background-color: #EEDBDB;
   width: 28.13rem;
   height: 20.88rem;
@@ -84,7 +50,7 @@
   position: absolute;
   top: 18.63rem;
   left: 3.63rem;
-  border-radius: var(--br-11xl);
+  /* border-radius:5rem;   */
   width: 24.63rem;
   height: 16.75rem;
   object-fit: cover;
@@ -111,12 +77,76 @@
 }
 .categorypage {
   position: relative;
-  background-color: var(--color-white);
   width: 100%;
   height: 71.06rem;
   overflow: hidden;
   text-align: left;
-  font-size: var(--font-size-17xl);
-  color: var(--color-black);
-  font-family: var(--font-itim);
+
+}
+
+
+
+@media only screen and (max-width: 600px){
+  .dance-categories{
+    top: 8.94rem;
+    left: 6.25rem;
+    font-size: 1.75rem;
+  }
+  .categorypage-child{
+    width: 8rem;
+    height: 6rem;
+    left: 1.2rem;
+  }
+  .categorypage-item{
+    width: 8rem;
+    height: 6rem;
+    left: 10.2rem;
+  }
+  .categorypage-child1{
+    width: 8rem;
+    height: 6rem;
+    left: 19.2rem;
+  }
+  .rectangle-div{
+    width: 8rem;
+    height: 6rem;
+    left: 1.2rem;
+    top: 26rem;
+  }
+  .categorypage-inner{
+    width: 8rem;
+    height: 6rem;
+    left: 10.2rem;
+    top: 26rem;
+  }
+  .rectangle-icon{
+    top: 16.63rem;
+    left: 1.63rem;
+    width: 6.75rem;
+    height: 5.75rem;
+  }
+  .categorypage-child5{
+    left: 10.75rem;
+    width: 6.75rem;
+    height: 5.75rem;
+    top: 16.63rem;
+  }
+  .categorypage-child4{
+    left: 19.51rem;
+    width: 6.75rem;
+    height: 5.75rem;
+    top: 16.63rem;
+  }
+  .categorypage-child3{
+    top: 26.15rem;
+    left: 1.63rem;
+    width: 6.75rem;
+    height: 5.75rem;
+  }
+  .categorypage-child2{
+    top: 26.15rem;
+    left: 10.75rem;
+    width: 6.75rem;
+    height: 5.75rem;
+  }
 }

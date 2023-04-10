@@ -1,47 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
 
-.about,
-.playlistiy {
-  position: relative;
-  font-size: 21px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  color: black;
-  text-align: left;
-}
-.playlistify {
-  font-size: 30px;
-  font-family: 'Italianno', cursive;
-  display: inline-block;
-  width: 20.25rem;
-  flex-shrink: 0;
-  padding-left: 190px;
-}
-.love-icon,
-.user-icon {
-  position: relative;
-  width: 4rem;
-  height: 4rem;
-  flex-shrink: 0;
-  object-fit: cover;
-}
-.user-icon {
-  width: 2.75rem;
-  height: 3.63rem;
-}
-.navbar-about {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 94.5rem;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  padding: 0 8px;
-  box-sizing: border-box;
-  align-items: center;
-  justify-content: center;
-  gap: 11.5rem;
-} */
 .aboutpage-child {
   position: absolute;
   top: 18.06rem;
@@ -87,4 +44,23 @@
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+
+
+@media only screen and (max-width: 600px){
+  .aboutpage-child{
+    left: -5rem;
+  }
+  .aboutpage-item{
+    left: 1.8rem;
+    width: 23.1rem;
+    top: 39rem;
+    height: auto;
+  }
+  .about1{
+    left: 10.5rem;
+  }
+  .it-is-a-about-container{
+    left: 4rem;
+  }
+}
 

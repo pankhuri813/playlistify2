@@ -24,6 +24,16 @@ app.post("/test", (req,res) =>{
     res.send("data recieved")
     
 })
+app.put('/users/:userId', (req, res) => {
+    const userId = req.params.userId;
+    const url = req.body.url;
+  
+    // save the URL to the user data
+    // your code here...
+  
+    res.status(200).send(`Successfully saved ${url} to user ${userId} data.`);
+  });
+  
 
 
 app.get("/gtest", (req,res) => {
@@ -36,14 +46,3 @@ app.use(router);
 
 app.listen(5000)
 
-
-// schema={
-//     email:{
-//         type:String,
-//         required:true
-//     },
-//     favourites:[{
-//         category:String,
-//         playlidtId:String
-//     }]
-// }
