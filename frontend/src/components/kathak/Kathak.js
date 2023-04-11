@@ -1,17 +1,18 @@
 import { useState, useEffect} from "react";
 import VideoCard from "./VideoCard/VideoCard"
 import "./Kathak.css"
+// import {useParams} from 'react-router-dom';
 
 
-const data ={
-    kathak:{ 
-        titile:"kathak",
-        video:""
-    }
-}
+// const data ={
+//     kathak:{ 
+//         titile:"kathak",
+//         video:""
+//     }
+// }
 
 
-const Kathak = () => {
+const Kathak = (props) => {
     const [link, setLink] = useState("");
     const [rpp, setRPP] = useState(10);
     const [isFav,setIsFav] = useState(false);
@@ -19,7 +20,7 @@ const Kathak = () => {
     const [videos, setVideos] = useState([]);
     const [err, setErr] = useState("");
 
-    const type="kathak"
+    // const type="kathak"
     useEffect(() => {
         if (!id) {
             return;
@@ -56,6 +57,7 @@ const Kathak = () => {
         setVideos([]);
         getId();
      }
+    //  let { name } = useParams();
      console.log(err);
 
      return (
@@ -64,13 +66,13 @@ const Kathak = () => {
         <div className="kathak-container">
      {/* **       <div className="kathak">{`Kathak `}</div> */}
             <div className="hero-section">
-                <h1 className="heading">{data[type].title}</h1>
+                <h1 className="heading">{props.name}</h1>
                 <div className="hero-main">
                     <div className="suggested-video">
                     <iframe
               width="560"
               height="315"
-              src={`https://www.youtube.com/embed/videoseries?list=${data[type].video}`}
+              src={`https://www.youtube.com/embed/videoseries?list=${props.link}`}
               title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -99,23 +101,31 @@ const Kathak = () => {
                 <div className="playlist">
                     <div className="playlist-heading-container">
                         <h1 className="heading">Your Playlist</h1>
-                        <button 
-                            className="favorite-btn"
-                            onClick={() => {
-                                setIsFav(!isFav);
-                            }}
-                            >
-         <p> {isFav ? "Remove from favorites" : "Add to favorites"}</p>
-              <img
-                src={
-                  isFav
-                    ? "/icons/heart-filled.svg"
-                    : "/icons/heart.svg"
-                }
-                alt=""
-                className="heart-icon"
-              />
-         </button>
+                        <button
+  className="favorite-btn"
+  onClick={() => {
+    setIsFav(!isFav);
+    const url = '/favorites';
+    const method = 'POST';
+    const headers = { 'Content-Type': 'application/json' };
+    const body = JSON.stringify({
+      userId: localStorage.getItem('sub'),id });
+    fetch(url, { method, headers, body })
+      .then(response => response.json())
+      .then(data => {
+        console.log('POST response:', data);
+      })
+      .catch(error => console.error(error));
+  }}
+    >
+  <p>{isFav ? 'Remove from favorites' : 'Add to favorites'}</p>
+  <img
+    src={isFav ? '/icons/heart-filled.svg' : '/icons/heart.svg'}
+    alt=""
+    className="heart-icon"
+  />
+</button>
+
      </div>
      <div className="videos-container">
 

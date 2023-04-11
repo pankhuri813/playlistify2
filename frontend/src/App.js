@@ -5,7 +5,7 @@ import Home from "./components/Homepage/Homepage"
 import CategoryDance from "./components/Category/CategoryDance"
 import Kathak from "./components/kathak/Kathak"
 import Navbar from "./components/Navbar and footer/Navbar";
-
+import Favoritelist from "./components/FavoriteList/Favoritelist"
 
 
 function App() {
@@ -17,8 +17,10 @@ function App() {
        <Route path="/about" element ={<About />} />
        <Route path="/homepage" element={<Home />} />
        <Route path="/category" element={<CategoryDance />} />
-       <Route path="/kathak" element={<Kathak />} />
+       <Route path="/hiphop" element={<Kathak name="Hip Hop" link="PLxA687tYuMWjuNRTGvDuLQZjHaLQv3wYL" />} />
+       <Route path="/kathak" element={<Kathak name="Kathak" link="PLxA687tYuMWjuNRTGvDuLQZjHaLQv3wYL" />} />
        <Route path="/Navbar" element={<Navbar />} />
+       <Route path ="/favoritelist" element={<Favoritelist />} />
       </Routes>
       {/* // <Footer /> */}
 
