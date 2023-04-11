@@ -4,7 +4,7 @@ function FavoritesList() {
   const [favorites, setFavorites] = useState();
 
   useEffect(() => {
-    fetch(`/favorites/${localStorage.getItem("sub")}`)
+    fetch(`/favorites/${sessionStorage.getItem("sub")}`)
       .then(response => response.json())
       .then(data => {
         setFavorites(data);

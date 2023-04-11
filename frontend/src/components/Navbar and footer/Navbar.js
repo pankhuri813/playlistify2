@@ -8,8 +8,8 @@ function Navbar() {
             <div className="about">Home</div>
             <div className="about">About</div>
             <div className="playlistify">Playlistify</div>
-            <img className="love-icon" alt="" src="./Images/hearticon.png" />
-            <img className="user-icon" alt="" src="./Images/usericon.png" />
+            <img className="love-icon" alt="" src="/Images/hearticon.png" />
+            <img className="user-icon" alt="" src="/Images/usericon.png" />
         </nav>
     </div>
   )
