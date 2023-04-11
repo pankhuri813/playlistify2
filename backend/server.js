@@ -37,13 +37,3 @@ app.use(router);
 app.listen(5000)
 
 
-// schema={
-//     email:{
-//         type:String,
-//         required:true
-//     },
-//     favourites:[{
-//         category:String,
-//         playlidtId:String
-//     }]
-// }
