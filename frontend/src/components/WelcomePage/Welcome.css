@@ -78,3 +78,29 @@
   font-size: 1.5rem;
   line-height: 1.5;
 }
+
+
+
+@media only screen and (max-width: 600px){
+  .images{
+    width: 6.5rem;
+  }
+  .welcome-image{
+    left: 2.5rem;
+    width: 16.8rem;
+    height: 15.6rem;
+  }
+  .logo{
+    top: 22.13rem;
+    left: 2.5rem;
+    width: 20rem;
+    height: auto;
+  }
+  .text{
+    left: 7rem;
+    }
+    .buttons{
+      left: 11.6rem;
+      top: 42.8rem;
+    }
+}
