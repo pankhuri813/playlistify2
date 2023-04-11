@@ -1,4 +1,5 @@
 import "./Welcome.css";
+import LoginButton from "../Auth0/Login";
 
 function Welcome() {
   return (
@@ -7,7 +8,9 @@ function Welcome() {
       <img className="welcome-image" src="./Images/welcomepageImage.jpg" alt="" />
       <img className="logo" src="./Images/logo.png" alt="" />
       <div className="buttons">
-        <div className="login">LOGIN</div>
+      
+          {/* <div className="login">Login</div> */}
+          <LoginButton></LoginButton>
         <div className="signup">SIGN-UP</div>
       </div>
       <p className="text">
