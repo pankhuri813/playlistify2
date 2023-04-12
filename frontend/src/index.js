@@ -5,11 +5,13 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import { Auth0Provider } from '@auth0/auth0-react';
 
-const domain = process.env.DOMAIN;
-const clientId = process.env.CLIENT_ID;
+const domain = process.env.REACT_APP_DOMAIN
+const clientId = process.env.REACT_APP_CLIENT_ID
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <BrowserRouter>
     <Auth0Provider
     domain ={domain}
     clientId={clientId}
@@ -17,8 +19,9 @@ root.render(
       redirect_uri: window.location.origin+'/homepage'
     }}
   >
-     <BrowserRouter>
+    
      <App />
-     </BrowserRouter>
+     
      </Auth0Provider>
+     </BrowserRouter>
 );

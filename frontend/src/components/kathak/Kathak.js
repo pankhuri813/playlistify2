@@ -106,10 +106,10 @@ const Kathak = (props) => {
   onClick={() => {
     setIsFav(!isFav);
     const url = '/favorites';
-    const method = 'POST';
+    const method = 'PUT';
     const headers = { 'Content-Type': 'application/json' };
     const body = JSON.stringify({
-      userId: localStorage.getItem('sub'),id });
+      userId: localStorage.getItem('sub'),playlistId:id });
     fetch(url, { method, headers, body })
       .then(response => response.json())
       .then(data => {

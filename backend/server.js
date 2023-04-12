@@ -18,19 +18,19 @@ app.use(express.json())
 mongoose.connect(process.env.MONGO_URI)
 
 
-app.post("/test", (req,res) =>{
-    let data = req.body;
-    console.log(req.body)
-    res.send("data recieved")
+// app.post("/test", (req,res) =>{
+//     let data = req.body;
+//     console.log(req.body)
+//     res.send("data recieved")
     
-})
+// })
 
 
-app.get("/gtest", (req,res) => {
-    console.log(req.query)
-    res.send("oejchfye")
+// app.get("/gtest", (req,res) => {
+//     console.log(req.query)
+//     res.send("oejchfye")
     
-})
+// })
 
 app.use(router);
 

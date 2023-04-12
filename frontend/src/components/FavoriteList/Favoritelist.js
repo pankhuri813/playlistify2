@@ -1,54 +1,85 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
+import VideoCard from "../kathak/VideoCard/VideoCard";
 
 function FavoritesList() {
-  const [favorites, setFavorites] = useState();
+  const [favorites, setFavorites] = useState([]);
+  const [totalItems, setTotalItems] = useState(null);
+  const [videos, setVideos] = useState([]);
+  const [error, setError] = useState("");
+
+  // useEffect(() => {
+  //   fetch(`/favorites/${sessionStorage.getItem("sub")}`)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setFavorites(data);
+  //       setTotalItems(data.length);
+  //       console.log(data);
+  //     })
+  //     .catch((error) => console.error(error));
+  // }, []);
 
   useEffect(() => {
-    fetch(`/favorites/${sessionStorage.getItem("sub")}`)
-      .then(response => response.json())
-      .then(data => {
-        setFavorites(data);
-        console.log(data)
-      })
-      .catch(error => console.error(error))
-  }, []);
+      fetch(`/favorites/${sessionStorage.getItem("sub")}`)
+        .then((response) => response.json())
+        .then((data) => {
+          setFavorites(data);
+          setTotalItems(data.length);
+          // console.log(data);
+        })
+        .catch((error) => console.error(error));
+    // if (favorites.length > 0) {
+      let arr = [];
+      for (let i = 0; i < favorites.length; i++) {
+        let favoriteId = favorites[i];
+        fetch(
+          `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${favoriteId}&maxResults=1&key=AIzaSyCGuF9vosG65GuVpdlJxmxEpgCR1BgYdFw`
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.error) {
+              setError(data.error.message);
+              console.log(error)
+            }
+            arr.push(data);
+            // else {
+              console.log(arr)
+              if(arr.length === totalItems){setVideos(arr)};
+            // }
+          })
+          .catch((error) => console.error(error));
+          
+          // if (i === favorites.length - 1) {
+            //   break;
+            // }
+            
+          }
+            // console.log(arr)
+    // }
+  }, [totalItems]);
 
-  function handleDeleteFavorite(favoriteId) {
-    fetch(`/favorites/userId/${favoriteId}`, {
-      method: 'DELETE'
-    })
-      .then(response => response.json())
-      .then(data => {
-        // update the favorites state variable by removing the deleted favorite
-        setFavorites(prevFavorites => prevFavorites.filter(favorite => favorite !== favoriteId));
-      })
-      .catch(error => console.error(error))
-  }
 
-  function handleDeleteAllFavorites() {
-    fetch('/favorites/userId', {
-      method: 'DELETE'
-    })
-      .then(response => response.json())
-      .then(data => {
-        // update the favorites state variable by removing all favorites
-        setFavorites([]);
-      })
-      .catch(error => console.error(error))
-  }
-
-  favorites && console.log(favorites)
-
+  // console.log(videos)
   return (
-    <div>
-      {favorites && favorites.map(favorite => (
-        <div key={favorite}>
-          {favorite}
-          <button onClick={() => handleDeleteFavorite(favorite)}>Delete</button>
-        </div>
-      ))}
-      <button onClick={() => handleDeleteAllFavorites()}>Delete All Favorites</button>
-    </div>
+    <>
+      {/* {favorites.length>=0&&videos.length >= 0 && */}
+        {videos && videos.map((e, i) => {
+          // console.log(e);
+          return (
+            <>
+              <VideoCard
+                title={e.items[0].snippet.title}
+                key={i}
+                thumbnail={
+                  e.items[0].snippet.thumbnails.high
+                    ? e.items[0].snippet.thumbnails.high.url
+                    : "/Images/img-not-found.png"
+                }
+                channel={e.items[0].snippet.channelTitle}
+              />
+            </>
+          );
+        })}
+    </>
   );
 }
 
