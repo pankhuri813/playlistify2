@@ -7,9 +7,9 @@ const Profile = () => {
 
   if (isLoading) {
     return <div>Loading ...</div>;
-  } else {
+  } else if (user) {
     //setting user id into localstorage 
-    localStorage.setItem("sub",user.sub)
+    sessionStorage.setItem("sub",user.sub)
 
     // creating document for new user if doesn't already exist
     fetch("/add-user", {

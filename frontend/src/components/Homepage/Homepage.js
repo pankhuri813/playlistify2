@@ -1,11 +1,13 @@
 import "./Homepage.css";
 import Profile from "../Auth0/Profile";
 import LogoutButton from "../Auth0/Logout";
+import Navbar from "../Navbar and footer/Navbar";
+import { Link } from "react-router-dom";
 
 const Homepage = () => {
   return (
     <div className="homepage">
-      <Profile />
+      <Navbar />
       
       <div className="homepage-child" />
       <div className="steps-1" />
@@ -21,9 +23,9 @@ const Homepage = () => {
       
       <div className="types">
         <div className="browse-the-categories">Browse The Categories</div>
-        <img className="types-child" alt="" src="./Images/dance.jpeg" />
-        <img className="types-item" alt="" src="./Images/cooking.jpeg" />
-        <img className="types-inner" alt="" src="./Images/drawing.jpeg" />
+       <Link to ='./dance'> <img className="types-child" alt="" src="./Images/dance.jpeg" /> </Link>
+        <Link to ='./cooking'> <img className="types-item" alt="" src="./Images/cooking.jpeg" /> </Link>
+        <Link to ='./drawing'> <img className="types-inner" alt="" src="./Images/drawing.jpeg" /> </Link>
         <div className="types-child1" />
         <div className="types-child2" />
         <div className="types-child3" />
