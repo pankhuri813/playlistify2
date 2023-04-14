@@ -1,16 +1,6 @@
 import { useState, useEffect} from "react";
 import VideoCard from "./VideoCard/VideoCard"
 import "./Kathak.css"
-// import {useParams} from 'react-router-dom';
-
-
-// const data ={
-//     kathak:{ 
-//         titile:"kathak",
-//         video:""
-//     }
-// }
-
 
 const Kathak = (props) => {
     const [link, setLink] = useState("");
@@ -20,7 +10,6 @@ const Kathak = (props) => {
     const [videos, setVideos] = useState([]);
     const [err, setErr] = useState("");
 
-    // const type="kathak"
     useEffect(() => {
         if (!id) {
             return;
@@ -43,28 +32,26 @@ const Kathak = (props) => {
 
     function getId() {
      const playlistId = link.split('list=')[1];
-        if (playlistId && playlistId.match(/^[\w-]+$/)) {
-         console.log("Playlist ID: ", playlistId);
-            setId(playlistId);
-    } else {
-        setErr("Invalid Youtube Playlist link");
-        
-             }
-     }
-   
+
+         (playlistId && playlistId.match(/^[\w-]+$/)) 
+                ?   setId(playlistId)       
+                      : setErr("Invalid Youtube Playlist link");
+                      console.log("Playlist ID: ", playlistId);
+                 }
+
+    
+  
      function handleSubmit(e) {
         e.preventDefault();
         setVideos([]);
         getId();
      }
-    //  let { name } = useParams();
      console.log(err);
 
      return (
 
         
         <div className="kathak-container">
-     {/* **       <div className="kathak">{`Kathak `}</div> */}
             <div className="hero-section">
                 <h1 className="heading">{props.name}</h1>
                 <div className="hero-main">
@@ -101,19 +88,18 @@ const Kathak = (props) => {
                 <div className="playlist">
                     <div className="playlist-heading-container">
                         <h1 className="heading">Your Playlist</h1>
-                        <button
-  className="favorite-btn"
+                        <button  className="favorite-btn"
   onClick={() => {
     setIsFav(!isFav);
     const url = '/favorites';
     const method = 'PUT';
     const headers = { 'Content-Type': 'application/json' };
     const body = JSON.stringify({
-      userId: localStorage.getItem('sub'),playlistId:id });
+      userId: sessionStorage.getItem('sub'),playlistId:id });
     fetch(url, { method, headers, body })
       .then(response => response.json())
       .then(data => {
-        console.log('POST response:', data);
+        console.log('PUT response:', data);
       })
       .catch(error => console.error(error));
   }}
@@ -150,13 +136,16 @@ const Kathak = (props) => {
         Show More
      </button>
      </div>
-            ) : (
+            ) 
+            : (
                 err
-            )}
+            )
+            }
         </div>
      )
 
     }
+
 
    
 

@@ -7,63 +7,41 @@ function FavoritesList() {
   const [videos, setVideos] = useState([]);
   const [error, setError] = useState("");
 
-  // useEffect(() => {
-  //   fetch(`/favorites/${sessionStorage.getItem("sub")}`)
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       setFavorites(data);
-  //       setTotalItems(data.length);
-  //       console.log(data);
-  //     })
-  //     .catch((error) => console.error(error));
-  // }, []);
-
   useEffect(() => {
-      fetch(`/favorites/${sessionStorage.getItem("sub")}`)
+    fetch(`/favorites/${sessionStorage.getItem("sub")}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setFavorites(data);
+        setTotalItems(data.length);
+      })
+      .catch((error) => console.error(error));
+    let arr = [];
+    for (let i = 0; i < favorites.length; i++) {
+      let favoriteId = favorites[i];
+      fetch(
+        `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${favoriteId}&maxResults=1&key=AIzaSyCGuF9vosG65GuVpdlJxmxEpgCR1BgYdFw`
+      )
         .then((response) => response.json())
         .then((data) => {
-          setFavorites(data);
-          setTotalItems(data.length);
-          // console.log(data);
+          if (data.error) {
+            setError(data.error.message);
+            console.log(error);
+          }
+          arr.push(data);
+
+          console.log(arr);
+          if (arr.length === totalItems) {
+            setVideos(arr);
+          }
         })
         .catch((error) => console.error(error));
-    // if (favorites.length > 0) {
-      let arr = [];
-      for (let i = 0; i < favorites.length; i++) {
-        let favoriteId = favorites[i];
-        fetch(
-          `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${favoriteId}&maxResults=1&key=AIzaSyCGuF9vosG65GuVpdlJxmxEpgCR1BgYdFw`
-        )
-          .then((response) => response.json())
-          .then((data) => {
-            if (data.error) {
-              setError(data.error.message);
-              console.log(error)
-            }
-            arr.push(data);
-            // else {
-              console.log(arr)
-              if(arr.length === totalItems){setVideos(arr)};
-            // }
-          })
-          .catch((error) => console.error(error));
-          
-          // if (i === favorites.length - 1) {
-            //   break;
-            // }
-            
-          }
-            // console.log(arr)
-    // }
+    }
   }, [totalItems]);
 
-
-  // console.log(videos)
   return (
     <>
-      {/* {favorites.length>=0&&videos.length >= 0 && */}
-        {videos && videos.map((e, i) => {
-          // console.log(e);
+      {videos &&
+        videos.map((e, i) => {
           return (
             <>
               <VideoCard
