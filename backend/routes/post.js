@@ -68,18 +68,22 @@ router.post('/add-user', async (req, res) => {
       }
     });
     
-    router.delete('/:userId/:favoriteId', async (req, res) => {
+    router.put('/modify/:userId/:favoriteId', async (req, res) => {
       const { userId, favoriteId } = req.params;
     
       try {
-        const userFavorites = await Favorite.findOne({ userId });
-        if (!userFavorites) {
-          res.status(404).json({ message: "User not found" });
-        } else {
-          userFavorites.favorites.pull(favoriteId);
-          const savedFavorite = await userFavorites.save();
-          res.status(200).json(savedFavorite);
-        }
+        const userFavorites = await Favorite.findOneAndDelete({ userId });
+        
+        userFavorites.favorite=arr;
+        userFavorites.save();
+        res.send(userFavorites)
+        // if (!userFavorites) {
+        //   res.status(404).json({ message: "User not found" });
+        // } else {
+        //   userFavorites.favorites.pull(favoriteId);
+        //   const savedFavorite = await userFavorites.save();
+        //   res.status(200).json(savedFavorite);
+        // }
       } catch (error) {
         console.log(error);
         res.status(400).json({ error: error.message });
