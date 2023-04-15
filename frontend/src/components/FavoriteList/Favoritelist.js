@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 import VideoCard from "../kathak/VideoCard/VideoCard";
 
 function FavoritesList() {
+  // state variable 
   const [favorites, setFavorites] = useState([]);
   const [totalItems, setTotalItems] = useState(null);
   const [videos, setVideos] = useState([]);
   const [error, setError] = useState("");
 
   useEffect(() => {
+    // get request to send to the server 
     fetch(`/favorites/${sessionStorage.getItem("sub")}`)
       .then((response) => response.json())
       .then((data) => {
@@ -27,11 +29,12 @@ function FavoritesList() {
             setError(data.error.message);
             console.log(error);
           }
+          
           arr.push(data);
 
           console.log(arr);
           if (arr.length === totalItems) {
-            setVideos(arr);
+            setVideos(arr); //state variable defined earlier 
           }
         })
         .catch((error) => console.error(error));
@@ -45,6 +48,7 @@ function FavoritesList() {
           return (
             <>
               <VideoCard
+              //e is a variable that reprents each object in video array
                 title={e.items[0].snippet.title}
                 key={i}
                 thumbnail={

@@ -4,19 +4,25 @@ const Favorite = require("../favorite.js")
 const router = express.Router()
 
 
+
+
+// In this code, we are creating a new document in the "Favorite" collection with the given userId 
+// and name if a document with the same userId doesn't already exist. So we are adding a new user to the 
+// collection of users who have saved playlists as their favorites. Therefore, we are updating the "Favorite" collection.
+
 router.post('/add-user', async (req, res) => {
     const { userId,name } = req.body;
 
     try {
       // Check if the user already exists in the database
-      const playlist = await Favorite.findOne ({ userId });
-      if (playlist) {
-        res.status(200).json({ message: "Playlist already exists in favorites" });
+      const user  = await Favorite.findOne ({ userId });
+      if (user) {
+        res.status(200).json({ message: "user  already exists in favorites" });
       } else {
         // If the user does not exist, create a new document with the given userId
-        const newPlaylist = new Favorite({ userId,  name });
-        const savedPlaylist = await newPlaylist.save();
-        res.status(200).json(savedPlaylist);
+        const newUser = new Favorite({ userId,  name });
+        const savedUser = await newUser.save();
+        res.status(200).json(savedUser);
       }
     } catch (error) {
       console.log(error);
@@ -29,7 +35,7 @@ router.post('/add-user', async (req, res) => {
   router.put('/favorites', async (req, res) => {
     const { userId,playlistId } = req.body;
     try{
-         // Check if the user already exists in the database
+         // get user data 
       const user = await Favorite.findOne({userId});
       console.log(user)
       if (user) {
@@ -68,29 +74,26 @@ router.post('/add-user', async (req, res) => {
       }
     });
     
-    router.put('/modify/:userId/:favoriteId', async (req, res) => {
-      const { userId, favoriteId } = req.params;
+    // router.put('/modify/:userId/:favoriteId', async (req, res) => {
+    //   const { userId, favoriteId } = req.params;
     
-      try {
-        const userFavorites = await Favorite.findOneAndDelete({ userId });
+    //   try {
+    //     const userFavorites = await Favorite.findOneAndDelete({ userId });
         
-        userFavorites.favorite=arr;
-        userFavorites.save();
-        res.send(userFavorites)
-        // if (!userFavorites) {
-        //   res.status(404).json({ message: "User not found" });
-        // } else {
-        //   userFavorites.favorites.pull(favoriteId);
-        //   const savedFavorite = await userFavorites.save();
-        //   res.status(200).json(savedFavorite);
-        // }
-      } catch (error) {
-        console.log(error);
-        res.status(400).json({ error: error.message });
-      }
-    });
+    //     userFavorites.favorite=arr;
+    //     userFavorites.save();
+    //     res.send(userFavorites)
+    //     // if (!userFavorites) {
+    //     //   res.status(404).json({ message: "User not found" });
+    //     // } else {
+    //     //   userFavorites.favorites.pull(favoriteId);
+    //     //   const savedFavorite = await userFavorites.save();
+    //     //   res.status(200).json(savedFavorite);
+    //     // }
+    //   } catch (error) {
+    //     console.log(error);
+    //     res.status(400).json({ error: error.message });
+    //   }
+    // });
     
     module.exports = router;
-
-
-
