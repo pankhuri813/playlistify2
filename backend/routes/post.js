@@ -6,9 +6,7 @@ const router = express.Router()
 
 
 
-// In this code, we are creating a new document in the "Favorite" collection with the given userId 
-// and name if a document with the same userId doesn't already exist. So we are adding a new user to the 
-// collection of users who have saved playlists as their favorites. Therefore, we are updating the "Favorite" collection.
+
 
 router.post('/add-user', async (req, res) => {
     const { userId,name } = req.body;
@@ -63,7 +61,7 @@ router.post('/add-user', async (req, res) => {
       const userFavorites = await Favorite.findOne({ userId });
       console.log(userFavorites)
       if (!userFavorites) {
-        res.status(404).json({ message: "User not found" });
+        res.status(404).json({ message: "playlist not found" });
       } else {
         res.status(200).json(userFavorites.favorite);
       }

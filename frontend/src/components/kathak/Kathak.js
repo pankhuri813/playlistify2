@@ -114,6 +114,7 @@ const Kathak = (props) => {
               return (
                 <>
                   <VideoCard
+                  //e is an object representing all the videos in a playlist
                     key={i}
                     title={e.snippet.title}
                     thumbnail={
