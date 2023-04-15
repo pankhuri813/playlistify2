@@ -8,10 +8,12 @@ const Profile = () => {
   if (isLoading) {
     return <div>Loading ...</div>;
   } else if (user) {
-    //setting user id into localstorage 
-    sessionStorage.setItem("sub",user.sub)
+    
 
-    // creating document for new user if doesn't already exist
+    //setting user id into localstorage 
+    sessionStorage.setItem("sub",user.sub) 
+
+    // sends a POST request to create a new user document on the server's database.
     fetch("/add-user", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
