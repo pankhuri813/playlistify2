@@ -14,7 +14,7 @@ const LoginButton = () => {
     });
   };
 
-  return <button onClick={onLoginClick}>Log In</button>;
+  return <button className='login' onClick={onLoginClick}>Log In</button>;
 };
 
 export default LoginButton;

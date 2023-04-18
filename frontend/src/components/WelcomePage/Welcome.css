@@ -55,20 +55,22 @@
 
 .login,
 .signup {
-  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
-  /* text-transform: uppercase; */
-  /* letter-spacing: 0.2rem; */
   cursor: pointer;
+  position: absolute;
+  top: 36.88rem;
+  left: 56.69rem;
+  width: 10rem;
+  height: 4.38rem;
 }
 
-.signup {
+/* .signup {
   margin-left: 13rem;
   background-color: #EEDBDB;
-}
+} */
 
 .text {
   position: absolute;
