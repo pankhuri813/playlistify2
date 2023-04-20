@@ -1,7 +1,6 @@
-/* *{
-  overflow-y: hidden;
-  
-} */
+@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Andika&display=swap');
+
 .welcome {
   position: relative;
   background-color: #fff;
@@ -62,7 +61,7 @@
   cursor: pointer;
   position: absolute;
   top: 36.88rem;
-  left: 56.69rem;
+  left:68.9rem;
   width: 10rem;
   height: 4.38rem;
 }
@@ -74,11 +73,11 @@
 
 .text {
   position: absolute;
-  top: 24.81rem;
-  left: 56.94rem;
-  font-family: "Inter", sans-serif;
+  top: 24rem;
+  left: 57rem;
+  font-family: 'Andika', sans-serif;
   font-size: 1.5rem;
-  line-height: 1.5;
+  
 }
 
 

@@ -9,8 +9,9 @@ const CategoryPage = () => {
       <Navbar />
       <div className="dance-categories">Dance - Categories</div>
 
-      <Link className="text-box" to="/kathak">
+      <Link to="/kathak">
         <img className="rectangle-icon" alt="" src="../Images/kathak.jpeg" />
+        {/* <div className="overlay-text"> <p className="texttype"> kathak</p></div> */}
       </Link>
       <Link to="/hiphop">
         

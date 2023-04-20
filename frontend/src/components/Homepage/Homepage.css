@@ -37,6 +37,13 @@
   display: inline-block;
   font-size: large;
 }
+.one{
+  position: absolute;
+  font-size: 3.75rem;
+  top: 0.25rem;
+  transform: translate(-50%, -50%);
+  left: 50%;
+}
 .homepage-child1,
 .homepage-child2 {
   position: absolute;
@@ -294,6 +301,12 @@
     border-radius: 100%;
   }
 
+  .textinside{
+    padding: 60px 55px 0px 55px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+  }
 
 
 

@@ -8,40 +8,7 @@
   text-shadow: 0 4px 4px rgba(10, 10, 10, 0.75);
   -webkit-text-stroke: 1px #000;
 }
-/* .categorypage-child,
-.categorypage-child1,
-.categorypage-inner,
-.categorypage-item,
-.rectangle-div {
-  position: absolute;
-  top: 16.5rem;
-  left: 2.13rem;
-  border-radius: 5rem;
-  background-color: #EEDBDB;
-  width: 28.13rem;
-  height: 20.88rem;
-} */
-/* .categorypage-child1,
-.categorypage-inner,
-.categorypage-item,
-.rectangle-div {
-  top: 16.56rem;
-  left: 33rem;
-}
-.categorypage-child1,
-.categorypage-inner,
-.rectangle-div {
-  top: 41.69rem;
-  left: 34.38rem;
-}
-.categorypage-child1,
-.rectangle-div {
-  left: 2.13rem;
-}
-.categorypage-child1 {
-  top: 16.56rem;
-  left: 64.56rem;
-} */
+
 .categorypage-child2,
 .categorypage-child3,
 .categorypage-child4,
@@ -86,7 +53,7 @@
 .rectangle-icon:hover {
   transform: scale(1.05);
  transition: transform 0.2s ease;
- opacity: 1;
+ 
 }
 .categorypage-child2:hover{
   transform: scale(1.05);
@@ -106,8 +73,8 @@
 }
 .overlay-text {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 18.63rem;
+  left: 3.63rem;;
   right: 0;
   bottom: 0;
   height: 20vw;
@@ -118,7 +85,26 @@
   cursor: pointer;
   border-radius: 10px;
 }
+.rectangle-icon:hover .overlay-text{
+  opacity: 1;
 
+}
+.textype {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 3.2rem;
+  line-height: 4.8rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: aliceblue;
+}
 
 @media only screen and (max-width: 600px){
   .dance-categories{

@@ -4,7 +4,7 @@ import "./VideoCard.css";
 export default function VideoCard(props) {
   const { title, thumbnail, channel } = props;
   return (
-    <div className="video-card">
+    <div className="main video-card">
       <div
         className="video-img"
         style={{ backgroundImage: `url(${thumbnail})` }}
