@@ -3,17 +3,18 @@
     flex-direction: column;
     background: #f5f1ed;
     border-radius: 2rem;
-    width: 110%;
-    margin: auto;
+    width: 50rem;
+    margin-top: 10%;
   }
   
   .video-img {
-    width: 110%;
+    width: 50rem;
     height: 25rem;
     /* background-image: url("https://i.ytimg.com/vi/WQoB2z67hvY/maxresdefault.jpg"); */
     background-size: cover;
     background-position: center;
     border-radius: 2rem;
+    object-fit: cover;
   }
   
   .card-body {

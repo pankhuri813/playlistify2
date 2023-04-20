@@ -53,16 +53,19 @@
 }
 .heading-homepage2 {
   position: absolute;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   top: 22.44rem;
   left: 62.13rem;
-  display: inline-block;
+  /* display: inline-block; */
   width: 20.19rem;
-  font-size: medium;
+  font-size: 1.8rem;
 }
 .heading-homepage {
   position: absolute;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   top: 16rem;
-  left: 56.56rem;
+  left: 58rem;
+  font-size: 2rem;
 }
 
 .lorem-ipsum-has,
@@ -136,6 +139,7 @@
   overflow: hidden;
   font-size: var(--font-size-6xl);
 }
+
 .browse-the-categories {
   position: absolute;
   top: 3.5rem;
@@ -154,6 +158,8 @@
   width: 23.31rem;
   height: 21.63rem;
   object-fit: cover;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
 }
 .types-inner,
 .types-item {
@@ -213,7 +219,6 @@
   width: 94.5rem;
   height: 39.81rem;
   overflow: hidden;
-  font-size: var(--font-size-16xl);
 }
 .homepage {
   position: relative;
@@ -227,10 +232,12 @@
   font-family: itim;
 }
 .heading-homepage3{
+
   position: absolute;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   top: 10rem;
-  left: 49rem;
-  font-size: larger;
+  left: 51rem;
+  font-size: 2rem;
 }
   .process-2{
     position: absolute;
