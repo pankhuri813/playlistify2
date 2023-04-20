@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import VideoCard from "../kathak/VideoCard/VideoCard";
+import VideoFav from './VideoFav'
 
 function FavoritesList() {
   // state variable 
@@ -47,7 +47,7 @@ function FavoritesList() {
         videos.map((e, i) => {
           return (
             <>
-              <VideoCard
+              <VideoFav
               //e is a variable that reprents each object in video array
                 title={e.items[0].snippet.title}
                 key={i}

@@ -4,10 +4,6 @@ const Favorite = require("../favorite.js")
 const router = express.Router()
 
 
-
-
-
-
 router.post('/add-user', async (req, res) => {
     const { userId,name } = req.body;
 
@@ -72,7 +68,7 @@ router.post('/add-user', async (req, res) => {
       }
     });
     
-    // router.put('/modify/:userId/:favoriteId', async (req, res) => {
+    // router.delete('/modify/:userId/:favoriteId', async (req, res) => {
     //   const { userId, favoriteId } = req.params;
     
     //   try {

@@ -1,5 +1,5 @@
 import "./About.css";
-    import Navbar from "../Navbar and footer/Navbar";
+    import Navbar from "../Navbar/Navbar";
 
 const Aboutpage = () => {
   return (

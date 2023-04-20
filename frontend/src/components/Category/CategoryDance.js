@@ -1,21 +1,49 @@
+import Navbar from "../Navbar/Navbar";
 import "./Category.css";
+
 import { Link } from "react-router-dom";
 
-const CategoryPage = (props) => {
+const CategoryPage = () => {
   return (
     <div className="categorypage">
-      
-      <div className="dance-categories">{props.heading}</div>
-      <div className="categorypage-child" />
-      <div className="categorypage-item" />
-      <div className="categorypage-inner" />
-      <div className="rectangle-div" />
-      <div className="categorypage-child1" />
-     <Link to = {props.data[0].link} > <img className="rectangle-icon" alt="" src={props.data[0].img} /> </Link> 
-      <img className="categorypage-child2" alt="" src={props.rec2} />
-      <img className="categorypage-child3" alt="" src={props.rec3} />
-      <img className="categorypage-child4" alt="" src={props.rec4} />
-      <img className="categorypage-child5" alt="" src={props.rec5} />
+      <Navbar />
+      <div className="dance-categories">Dance - Categories</div>
+
+      <Link className="text-box" to="/kathak">
+        <img className="rectangle-icon" alt="" src="../Images/kathak.jpeg" />
+      </Link>
+      <Link to="/hiphop">
+        
+        <img
+          className="categorypage-child2"
+          alt=""
+          src="../Images/hiphop.jpg"
+        />
+      </Link>
+      <Link to="/tap-dance">
+       
+        <img
+          className="categorypage-child3"
+          alt=""
+          src="../Images/tapdance.jpeg"
+        />
+      </Link>
+      <Link to="/jazz">
+       
+        <img
+          className="categorypage-child4"
+          alt=""
+          src="../Images/jazzdance.jpg"
+        />
+      </Link>
+      <Link to="/contemporary">
+       
+        <img
+          className="categorypage-child5"
+          alt=""
+          src="../Images/contemporary.jpg"
+        />
+      </Link>
     </div>
   );
 };

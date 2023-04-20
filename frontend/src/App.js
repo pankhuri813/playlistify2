@@ -1,23 +1,18 @@
 import { Route, Routes } from "react-router-dom";
 import Welcome from "./components/WelcomePage/Welcome";
-import About from "./components/AboutPage/About"
-import Home from "./components/Homepage/Homepage"
-import Category from "./components/Category/CategoryDance"
-import Kathak from "./components/kathak/Kathak"
-import Navbar from "./components/Navbar and footer/Navbar";
-import Favoritelist from "./components/FavoriteList/Favoritelist"
-// import { link } from "fs";
+import About from "./components/AboutPage/About";
+import Home from "./components/Homepage/Homepage";
+import Dance from "./components/Category/CategoryDance";
+import Kathak from "./components/kathak/Kathak";
+import Navbar from "./components/Navbar/Navbar";
+import Favoritelist from "./components/FavoriteList/Favoritelist";
+import Cooking from './components/Category/CategoryCooking';
+import Drawing from './components/Category/CategoryDrawing';
 
 
 function App() {
 
-  let danceCategory = [
-    {img:"../Images/kathak.jpeg", link:"/kathak" } ,
-   {img:"../Images/jazzdance.jpeg", link:"/jazz"}, 
-   {img:"../Images/tapdance.jpeg", link:"/tap-Dance"},
-   {img:"../Images/contemporary.jpeg", link:"/contemporary"},
-   {img:"../Images/hiphop.jpg", link:"/hiphop"} 
-  ]
+ 
 
   return (
     <>
@@ -26,11 +21,11 @@ function App() {
        <Route path="/" element={<Welcome /> } />
        <Route path="/about" element ={<About />} />
        <Route path="/homepage" element={<Home />} />
-       {/* <Route path="/category" element={<CategoryDance />} /> */}
        <Route path="/Navbar" element={<Navbar />} />
        <Route path ="/favoritelist" element={<Favoritelist />} />
-
-
+       <Route path = "/dance" element={<Dance />} />
+       <Route path="/cooking" element={<Cooking />} />
+       <Route path="/drawing" element={<Drawing />} />
 
        <Route path="/potrait" element={<Kathak name="Potrait" link="PLnWaXZaVfDBee0conbZOBdJfZLlDcU9im" />} />
        <Route path="/architecture" element={<Kathak name="Architecture" link="PLejnOfiq1zb8YQwUw8o6mk9Krw5-Icd_D" />} />
@@ -48,9 +43,9 @@ function App() {
        <Route path="/contemporary" element={<Kathak name="Contemporary" link="PLXSToRkLrp7KX9Ejs-uAf68NrX9IUFT0A" />} />
        <Route path="/jazz" element={<Kathak name="Jazz-Dance" link="PLF6166F725D8AA1DE" />} />
 
-       <Route path="/homepage/dance" element={<Category heading="Dance-Categories" data={danceCategory} rec1={{img:"../Images/kathak.jpeg", link:"/kathak" } } rec2="../Images/tapdance.jpeg" rec3="../Images/contemporary.jpg" rec4="../Images/hiphop.jpg" rec5="../Images/jazzdance.jpg"/> }/>
-       <Route path="/homepage/cooking" element={<Category heading="Cooking-Categories" rec1="../Images/chinese.jpeg" rec2="../Images/thaifood.jpg" rec3="../Images/nonveg.jpg" rec4="../Images/vegan.jpg" rec5="../Images/south-indian.jpeg" />} />
-       <Route path="/homepage/drawing" element={<Category heading = "Painting-categories" rec1="../Images/caricature.jpeg" rec2="../Images/potrait.jpeg" rec3="../Images/cartoon.jpeg" rec4="../Images/acrylic.jpg" rec5="../Images/architecture.jpg" />} />
+       {/* <Route path="/homepage/dance" element={<Category heading="Dance-Categories"  rec1={{img:"../Images/kathak.jpeg", link:"/kathak" } } rec2={{  img:"../Images/jazzdance.jpeg", link:"/jazz"}} rec3={{img:"../Images/tapdance.jpeg", link:"/tap-Dance"}} rec4={ {img:"../Images/contemporary.jpeg", link:"/contemporary"}}rec5={   {img:"../Images/hiphop.jpg", link:"/hiphop"} }/> }/>
+       <Route path="/homepage/cooking" element={<Category heading="Cooking-Categories" rec1={{ img:"../Images/nonveg.jpg", link:"/non-veg"}}rec2={{img:'../Images'}} rec3={} rec4={} rec5={} />} />
+       <Route path="/homepage/drawing" element={<Category heading = "Painting-categories" rec1={} rec2={} rec3={} rec4={} rec5={} />} /> */}
       </Routes>
       {/* // <Footer /> */}
 
@@ -60,4 +55,3 @@ function App() {
 export default App
 
 
-// rec1{img= "./hwyg.png" ,link to =/ueji}

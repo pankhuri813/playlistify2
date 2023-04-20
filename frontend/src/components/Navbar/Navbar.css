@@ -4,7 +4,6 @@
 .playlistiy {
   position: relative;
   font-size: 21px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color: #000;
   text-align: left;
 }
@@ -46,4 +45,28 @@
   justify-content: center;
   gap: 11.5rem;
   border-bottom: 1px dotted black;
+}
+.navbar-about :link{
+  text-decoration: none;
+}
+
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.user-profile img {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.user-profile h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: normal;
+  color: #fff;
 }
