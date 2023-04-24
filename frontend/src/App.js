@@ -43,11 +43,8 @@ function App() {
        <Route path="/contemporary" element={<Kathak name="Contemporary" link="PLXSToRkLrp7KX9Ejs-uAf68NrX9IUFT0A" />} />
        <Route path="/jazz" element={<Kathak name="Jazz-Dance" link="PLF6166F725D8AA1DE" />} />
 
-       {/* <Route path="/homepage/dance" element={<Category heading="Dance-Categories"  rec1={{img:"../Images/kathak.jpeg", link:"/kathak" } } rec2={{  img:"../Images/jazzdance.jpeg", link:"/jazz"}} rec3={{img:"../Images/tapdance.jpeg", link:"/tap-Dance"}} rec4={ {img:"../Images/contemporary.jpeg", link:"/contemporary"}}rec5={   {img:"../Images/hiphop.jpg", link:"/hiphop"} }/> }/>
-       <Route path="/homepage/cooking" element={<Category heading="Cooking-Categories" rec1={{ img:"../Images/nonveg.jpg", link:"/non-veg"}}rec2={{img:'../Images'}} rec3={} rec4={} rec5={} />} />
-       <Route path="/homepage/drawing" element={<Category heading = "Painting-categories" rec1={} rec2={} rec3={} rec4={} rec5={} />} /> */}
+      
       </Routes>
-      {/* // <Footer /> */}
 
       </>
   )

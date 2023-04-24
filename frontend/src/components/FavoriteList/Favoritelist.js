@@ -22,6 +22,7 @@ function FavoritesList() {
       let favoriteId = favorites[i];
       fetch(
         `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${favoriteId}&maxResults=1&key=AIzaSyCGuF9vosG65GuVpdlJxmxEpgCR1BgYdFw`
+        
       )
         .then((response) => response.json())
         .then((data) => {
@@ -41,6 +42,27 @@ function FavoritesList() {
     }
   }, [totalItems]);
 
+  const handleDelete = async (videoId) => {
+    try {
+      const response = await fetch('/favorites-delete', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          userId: sessionStorage.getItem("sub"),
+          playlistId: videoId,
+        }),
+      });
+      const data = await response.json();
+      console.log(data);
+      setFavorites(data.favorite);
+      setTotalItems(data.favorite.length);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <>
       {videos &&
@@ -48,7 +70,6 @@ function FavoritesList() {
           return (
             <>
               <VideoFav
-              //e is a variable that reprents each object in video array
                 title={e.items[0].snippet.title}
                 key={i}
                 thumbnail={
@@ -57,6 +78,7 @@ function FavoritesList() {
                     : "/Images/img-not-found.png"
                 }
                 channel={e.items[0].snippet.channelTitle}
+                onDelete={() => handleDelete(favorites[i])} // pass the video id to handleDelete
               />
             </>
           );

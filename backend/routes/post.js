@@ -55,7 +55,7 @@ router.post('/add-user', async (req, res) => {
   
     try {
       const userFavorites = await Favorite.findOne({ userId });
-      console.log(userFavorites)
+      // console.log(userFavorites)
       if (!userFavorites) {
         res.status(404).json({ message: "playlist not found" });
       } else {
@@ -68,26 +68,48 @@ router.post('/add-user', async (req, res) => {
       }
     });
     
-    // router.delete('/modify/:userId/:favoriteId', async (req, res) => {
-    //   const { userId, favoriteId } = req.params;
+
+    router.put('/favorites/:userId/:playlistId', async (req, res) => {
+      const { userId, playlistId } = req.params;
     
-    //   try {
-    //     const userFavorites = await Favorite.findOneAndDelete({ userId });
-        
-    //     userFavorites.favorite=arr;
-    //     userFavorites.save();
-    //     res.send(userFavorites)
-    //     // if (!userFavorites) {
-    //     //   res.status(404).json({ message: "User not found" });
-    //     // } else {
-    //     //   userFavorites.favorites.pull(favoriteId);
-    //     //   const savedFavorite = await userFavorites.save();
-    //     //   res.status(200).json(savedFavorite);
-    //     // }
-    //   } catch (error) {
-    //     console.log(error);
-    //     res.status(400).json({ error: error.message });
-    //   }
-    // });
+      try {
+        // Find the user by userId
+        const user = await Favorite.findOne({ userId });
+        if (!user) {
+          res.status(404).json({ message: "User not found" });
+          return;
+        }
+    
+        // Remove playlistId from the favorite array of the user
+        user.favorite = user.favorite.filter((id) => id !== playlistId);
+        const savedUser = await user.save();
+    
+        res.status(200).json(savedUser);
+      } catch (error) {
+        console.log(error);
+        res.status(400).json({ error: error.message });
+      }
+    });
+      
+    router.put('/favorites-delete', async (req, res) => {
+      const { userId, playlistId } = req.body;
+    
+      try {
+        const user = await Favorite.findOneAndUpdate(
+          { userId },
+          { $pull: { favorite: playlistId } },
+          { new: true }
+        );
+    console.log(user)
+        if (user) {
+          res.status(200).json(user);
+        } else {
+          res.status(402).json({ message: "User doesn't exist" });
+        }
+      } catch (error) {
+        console.log(error);
+        res.status(400).json({ error: error.message });
+      }
+    });
     
     module.exports = router;

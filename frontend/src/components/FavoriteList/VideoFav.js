@@ -1,10 +1,11 @@
 import React from "react";
-import "./VideoFav.css";
+import './VideoFav.css';
 
 export default function VideoCard(props) {
-  const { title, thumbnail, channel } = props;
+  const { title, thumbnail, channel, onDelete } = props;
+
   return (
-    <div className="video-card">
+    <div className="main video-card">
       <div
         className="video-img"
         style={{ backgroundImage: `url(${thumbnail})` }}
@@ -15,6 +16,9 @@ export default function VideoCard(props) {
           <img src="/icons/youtube.svg" alt="" className="yt-logo" />
           <p className="channel-name">{channel}</p>
         </div>
+        <button className="delete-button" onClick={onDelete}>
+          Delete
+        </button>
       </div>
     </div>
   );
