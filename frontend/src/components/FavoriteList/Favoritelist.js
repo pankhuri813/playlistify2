@@ -42,7 +42,7 @@ function FavoritesList() {
     }
   }, [totalItems]);
 
-  const handleDelete = async (videoId) => {
+const  handleDelete = async (videoId) => {
     try {
       const response = await fetch('/favorites-delete', {
         method: 'PUT',
@@ -61,7 +61,8 @@ function FavoritesList() {
     } catch (error) {
       console.error(error);
     }
-  };
+  }
+ 
 
   return (
     <>

@@ -3,7 +3,7 @@
   "name": "Create React App Sample",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "https://res.cloudinary.com/dqkwom77k/image/upload/v1682397388/playlistify-low-resolution-logo-black-on-transparent-background_zaqeug.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     }
