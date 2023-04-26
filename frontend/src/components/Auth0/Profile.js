@@ -23,7 +23,7 @@ const Profile = () => {
       .then((data) => {
         console.log("POST response:", data);
       })
-      .catch((error) => console.error(error));
+      .catch((error) => console.log(error));
   }
 
   return (
