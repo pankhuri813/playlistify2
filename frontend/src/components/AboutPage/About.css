@@ -32,7 +32,7 @@
   position: absolute;
   top: 26.13rem;
   left: 8.56rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 .aboutpage {
   position: relative;
@@ -43,7 +43,7 @@
   text-align: left;
   font-size: 21;
   color: black;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family:   serif; 
 }
 
 

@@ -44,7 +44,7 @@ function FavoritesList() {
 
 const  handleDelete = async (videoId) => {
     try {
-      const response = await fetch('/favorites-delete', {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/favorites-delete`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
