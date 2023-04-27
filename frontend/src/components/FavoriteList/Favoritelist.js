@@ -10,18 +10,18 @@ function FavoritesList() {
 
   useEffect(() => {
     // get request to send to the server 
-    fetch(`/favorites/${sessionStorage.getItem("sub")}`)
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/favorites/${sessionStorage.getItem("sub")}`)
       .then((response) => response.json())
       .then((data) => {
         setFavorites(data);
         setTotalItems(data.length);
       })
-      .catch((error) => console.error(error));
+      .catch((error) => console.log(error));
     let arr = [];
     for (let i = 0; i < favorites.length; i++) {
       let favoriteId = favorites[i];
       fetch(
-        `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${favoriteId}&maxResults=1&key=AIzaSyCGuF9vosG65GuVpdlJxmxEpgCR1BgYdFw`
+        `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${favoriteId}&maxResults=1&key=AIzaSyDVrPj052cWFmMOYMRoUiwJeFzArkgpwLE`
         
       )
         .then((response) => response.json())
