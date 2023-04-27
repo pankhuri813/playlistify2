@@ -1,4 +1,4 @@
-.main.video-card {
+.display-video-card {
     display: flex;
     flex-direction: column;
     background: #f5f1ed;
@@ -7,7 +7,7 @@
     margin: auto;
   }
   
- .video-card .video-img {
+ .display-video-card .video-image {
     width: 110%;
     height: 25rem;
     /* background-image: url("https://i.ytimg.com/vi/WQoB2z67hvY/maxresdefault.jpg"); */
@@ -16,7 +16,7 @@
     border-radius: 2rem;
   }
   
-.video-card .card-body {
+.display-video-card .card-body-display {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -25,7 +25,7 @@
     padding: 2.5rem;
   }
   
-.video-card .video-title {
+.display-video-card .display-video-title {
     font-family: "Poppins";
     font-style: normal;
     font-weight: 700;
@@ -41,7 +41,7 @@
     color: #000000;
   }
   
-.video-card .channel-container {
+.display-video-card .channel-containers {
     display: flex;
     gap: 1rem;
   

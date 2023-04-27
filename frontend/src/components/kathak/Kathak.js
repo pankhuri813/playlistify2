@@ -15,7 +15,7 @@ const Kathak = (props) => {
       return;
     }
     fetch(
-      `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${id}&maxResults=${rpp}&key=AIzaSyCGuF9vosG65GuVpdlJxmxEpgCR1BgYdFw`
+      `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${id}&maxResults=${rpp}&key=AIzaSyDVrPj052cWFmMOYMRoUiwJeFzArkgpwLE`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -86,7 +86,7 @@ const Kathak = (props) => {
               className="favorite-btn"
               onClick={() => {
                 setIsFav(!isFav);
-                const url = "/favorites";
+                const url = `${process.env.REACT_APP_BACKEND_URL}/favorites`;
                 const method = "PUT";
                 const headers = { "Content-Type": "application/json" };
                 const body = JSON.stringify({

@@ -14,7 +14,7 @@ const Profile = () => {
     sessionStorage.setItem("sub",user.sub) 
 
     // sends a POST request to create a new user document on the server's database.
-    fetch("/add-user", {
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/add-user`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ userId: user.sub }),
@@ -23,7 +23,7 @@ const Profile = () => {
       .then((data) => {
         console.log("POST response:", data);
       })
-      .catch((error) => console.error(error));
+      .catch((error) => console.log(error));
   }
 
   return (

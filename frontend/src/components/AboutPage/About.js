@@ -10,7 +10,7 @@ const Aboutpage = () => {
       <div className="about1"> <b>About</b> </div>
       <img className="aboutpage-item" alt="" src="./Images/aboutImage.jpg" />
       <div className="it-is-a-about-container">
-        <p className="it-is-a-about">It is a long established <br /> fact that a reader <br /> will be distracted by <br /> the readable content</p>
+        <p className="it-is-a-about">Playlistify provides a personalized and <br/>engaging learning experience that allows<br/> individuals to acquire new skills with ease, <br /> through a vast collection of  curated <br/>playlists from YouTube, tailored to their<br/> specific needs and preferencescd</p>
       </div>
     </div>
   );
