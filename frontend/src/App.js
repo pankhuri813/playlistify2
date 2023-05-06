@@ -5,17 +5,40 @@ import Home from "./components/Homepage/Homepage";
 import Dance from "./components/Category/CategoryDance";
 import Kathak from "./components/kathak/Kathak";
 import Navbar from "./components/Navbar/Navbar";
+import './App.css'
 import Favoritelist from "./components/FavoriteList/Favoritelist";
 import Cooking from './components/Category/CategoryCooking';
 import Drawing from './components/Category/CategoryDrawing';
+import PlaylistifySplash from "./components/WelcomePage/PlaylistifySplash";
+import { useState, useEffect } from "react";
 
-
+// import Footer from "./components/Footer";
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    },3000);
+
+    return () => clearTimeout(timeout)
+  }, [])
+
+  useEffect(() => {
+    setTimeout(() => {
+      document.getElementById('show-loader').style.display='none'   
+    }, 3000);
+  }, [])
 
  
 
   return (
     <>
+    <div id="show-loader" className= {`${loading ? 'show' : 'hide'}`}>
+      <PlaylistifySplash/>
+    </div>
+    <div className= {`${loading ? 'hide' : 'show'}`} >
+
      <Navbar />
     <Routes>
        <Route path="/" element={<Welcome /> } />
@@ -25,7 +48,9 @@ function App() {
        <Route path ="/favoritelist" element={<Favoritelist />} />
        <Route path = "/dance" element={<Dance />} />
        <Route path="/cooking" element={<Cooking />} />
-       <Route path="/drawing" element={<Drawing />} />
+       <Route path="/drawing" element={<Drawing />} /> 
+       {/* <Route path= "/footer" element={<Footer />} /> */}
+      
 
        <Route path="/potrait" element={<Kathak name="Potrait" link="PLnWaXZaVfDBee0conbZOBdJfZLlDcU9im" />} />
        <Route path="/architecture" element={<Kathak name="Architecture" link="PLejnOfiq1zb8YQwUw8o6mk9Krw5-Icd_D" />} />
@@ -45,6 +70,7 @@ function App() {
 
       
       </Routes>
+      </div>
 
       </>
   )
