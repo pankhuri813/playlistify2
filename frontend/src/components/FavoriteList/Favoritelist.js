@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import VideoFav from './VideoFav'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function FavoritesList() {
   // state variable 
@@ -15,7 +17,9 @@ function FavoritesList() {
       .then((data) => {
         setFavorites(data);
         setTotalItems(data.length);
+        console.log(totalItems)
       })
+     
       .catch((error) => console.log(error));
     let arr = [];
     for (let i = 0; i < favorites.length; i++) {
@@ -58,6 +62,7 @@ const  handleDelete = async (videoId) => {
       console.log(data);
       setFavorites(data.favorite);
       setTotalItems(data.favorite.length);
+      toast.warn("Playlist deleted!")
     } catch (error) {
       console.error(error);
     }
@@ -81,6 +86,7 @@ const  handleDelete = async (videoId) => {
                 channel={e.items[0].snippet.channelTitle}
                 onDelete={() => handleDelete(favorites[i])} // pass the video id to handleDelete
               />
+              <ToastContainer />
             </>
           );
         })}

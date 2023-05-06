@@ -1,6 +1,8 @@
 import { useState, useEffect} from "react";
 import VideoCard from "./VideoCard/VideoCard"
 import "./Kathak.css"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Kathak = (props) => {
   const [link, setLink] = useState("");
@@ -23,6 +25,7 @@ const Kathak = (props) => {
           setErr(data.error.message);
         } else {
           setVideos(data.items);
+          setIsFav(false)
         }
       });
 
@@ -50,6 +53,7 @@ const Kathak = (props) => {
         <h1 className="heading">{props.name}</h1>
         <div className="hero-main">
           <div className="suggested-video">
+            <ToastContainer />
             <iframe
               width="560"
               height="315"
@@ -81,11 +85,11 @@ const Kathak = (props) => {
       {videos && videos.length > 0 ? (
         <div className="playlist">
           <div className="playlist-heading-container">
-            <h1 className="heading">Your Playlist</h1>
-            <button
+            <h1 className="heading">Your Playlist</h1> 
+           {isFav===false ? <button
               className="favorite-btn"
               onClick={() => {
-                setIsFav(!isFav);
+                // setIsFav(!isFav);
                 const url = `${process.env.REACT_APP_BACKEND_URL}/favorites`;
                 const method = "PUT";
                 const headers = { "Content-Type": "application/json" };
@@ -97,17 +101,23 @@ const Kathak = (props) => {
                   .then((response) => response.json())
                   .then((data) => {
                     console.log("PUT response:", data);
+                    setIsFav(!isFav);
+                    toast.success("Playlist succesfully added!")
                   })
                   .catch((error) => console.error(error));
-              }}
+                  
+              }
+            }
+            
             >
-              <p>{isFav ? "Remove from favorites" : "Add to favorites"}</p>
+              <p>{isFav ? "Added to favourite" : "Add to favourites"}</p>
               <img
                 src={isFav ? "/icons/heart-filled.svg" : "/icons/heart.svg"}
                 alt=""
                 className="heart-icon"
               />
             </button>
+            : null}
           </div>
           <div className="videos-container">
             {videos.map((e, i) => {
