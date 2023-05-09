@@ -9,7 +9,7 @@
 }
 .playlistify {
   font-size: 30px;
-  font-family: 'Italianno';
+  /* font-family: 'Italianno'; */
   display: inline-block;
   width: 20.25rem;
   flex-shrink: 0;
@@ -24,8 +24,8 @@
   object-fit: cover;
 }
 .love-icon{
-    width: 2.75rem;
-    height: 2.5rem;
+    width: 2.3rem;
+    height: 1.9rem;
 }
 .user-icon {
   width: 2.75rem;
@@ -69,4 +69,14 @@
   font-size: 1rem;
   font-weight: normal;
   color: #fff;
+}
+.wishlist{
+  position:absolute;
+  top:0.01rem;
+  left:78rem;
+  background-color: #EEDBDB;
+  /* padding: 0.2rem; */
+  width:1.2rem;
+  border-radius: 5rem;
+  z-index:1;
 }

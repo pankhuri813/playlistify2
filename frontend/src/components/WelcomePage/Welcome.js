@@ -5,7 +5,7 @@ function Welcome() {
   return (
     <div className="welcome">
       <div className="images" />
-      <img className="welcome-image" src="./Images/welcomepageImage.jpg" alt="" />
+      <img className="welcome-image" src="https://res.cloudinary.com/dqkwom77k/image/upload/v1683611812/andrew-neel-ute2XAFQU2I-unsplash_gsshkp.jpg" alt="" />
       <img className="logo" src="./Images/logo.png" alt="" />
       
           {/* <div className="login">Login</div> */}

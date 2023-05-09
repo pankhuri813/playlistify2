@@ -1,14 +1,30 @@
 import React, { useState, useEffect } from "react";
 import VideoFav from './VideoFav'
 import { ToastContainer, toast } from 'react-toastify';
+import PlaylistifySplash from "../WelcomePage/PlaylistifySplash";
 import 'react-toastify/dist/ReactToastify.css';
 
 function FavoritesList() {
   // state variable 
   const [favorites, setFavorites] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [totalItems, setTotalItems] = useState(null);
   const [videos, setVideos] = useState([]);
   const [error, setError] = useState("");
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    },3000);
+
+    return () => clearTimeout(timeout)
+  }, [])
+
+  useEffect(() => {
+    setTimeout(() => {
+      document.getElementById('show-loader').style.display='none'   
+    }, 3000);
+  }, [])
 
   useEffect(() => {
     // get request to send to the server 
@@ -71,27 +87,34 @@ const  handleDelete = async (videoId) => {
 
   return (
     <>
-      {videos &&
-        videos.map((e, i) => {
-          return (
-            <>
-              <VideoFav
-                title={e.items[0].snippet.title}
-                key={i}
-                thumbnail={
-                  e.items[0].snippet.thumbnails.high
-                    ? e.items[0].snippet.thumbnails.high.url
-                    : "/Images/img-not-found.png"
-                }
-                channel={e.items[0].snippet.channelTitle}
-                onDelete={() => handleDelete(favorites[i])} // pass the video id to handleDelete
-              />
-              <ToastContainer />
-            </>
-          );
-        })}
+      {videos && videos.length === 0 ? (
+        <div id="show-loader" className={`${loading ? 'show' : 'hide'}`}>
+          <PlaylistifySplash />
+        </div>
+      ) : (
+        <div className={`${loading ? 'hide' : 'show'}`}>
+          {videos.map((e, i) => {
+            return (
+              <> 
+                <VideoFav
+                  title={e.items[0].snippet.title}
+                  thumbnail={
+                    e.items[0].snippet.thumbnails.high
+                      ? e.items[0].snippet.thumbnails.high.url
+                      : "/Images/img-not-found.png"
+                  }
+                  channel={e.items[0].snippet.channelTitle}
+                  onDelete={() => handleDelete(favorites[i])}
+                />
+                <ToastContainer />
+                </>
+            );
+          })}
+        </div>
+      )}
     </>
   );
-}
+  
+    }
 
-export default FavoritesList;
+export default FavoritesList

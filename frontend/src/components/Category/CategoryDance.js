@@ -10,13 +10,18 @@ const CategoryPage = () => {
       <div className="dance-categories">Dance - Categories</div>
 
       <Link to="/kathak">
-        <img className="rectangle-icon" alt="" src="../Images/kathak.jpeg" />
-        {/* <div className="overlay-text"> <p className="texttype"> kathak</p></div> */}
+        <div className="category-container">
+         <img className="kathak-category-container" alt="" src="../Images/kathak.jpeg" />
+           < div className="overlay-text">
+             <p>Kathak</p> 
+           </div>
+           </div>
+      
       </Link>
       <Link to="/hiphop">
         
         <img
-          className="categorypage-child2"
+          className="hiphop-container"
           alt=""
           src="../Images/hiphop.jpg"
         />
@@ -24,7 +29,7 @@ const CategoryPage = () => {
       <Link to="/tap-dance">
        
         <img
-          className="categorypage-child3"
+          className="tapdance-container"
           alt=""
           src="../Images/tapdance.jpeg"
         />
@@ -32,7 +37,7 @@ const CategoryPage = () => {
       <Link to="/jazz">
        
         <img
-          className="categorypage-child4"
+          className="jazzdance-container"
           alt=""
           src="../Images/jazzdance.jpg"
         />
@@ -40,7 +45,7 @@ const CategoryPage = () => {
       <Link to="/contemporary">
        
         <img
-          className="categorypage-child5"
+          className="contemporary-container"
           alt=""
           src="../Images/contemporary.jpg"
         />
