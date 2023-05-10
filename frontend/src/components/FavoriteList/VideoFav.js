@@ -1,25 +1,22 @@
 import React from "react";
 import './VideoFav.css';
 
-export default function VideoCard(props) {
-  const { title, thumbnail, channel, onDelete } = props;
-
+function VideoFav(props) {
+  const { favoriteId } = props;
+console.log(favoriteId)
   return (
-    <div className="main video-card">
-      <div
-        className="video-img"
-        style={{ backgroundImage: `url(${thumbnail})` }}
-      ></div>
-      <div className="card-body">
-        <h2 className="video-title">{title}</h2>
-        <div className="channel-container">
-          <img src="/icons/youtube.svg" alt="" className="yt-logo" />
-          <p className="channel-name">{channel}</p>
-        </div>
-        <button className="delete-button" onClick={onDelete}>
-          Delete
-        </button>
-      </div>
+    <div className="video-player-container">
+      <iframe
+        width="560"
+        height="315"
+        src={`https://www.youtube.com/embed/videoseries?list=${favoriteId}`}
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      >
+      </iframe>
     </div>
   );
 }
+export default VideoFav

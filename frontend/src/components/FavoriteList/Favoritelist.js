@@ -2,10 +2,13 @@ import React, { useState, useEffect } from "react";
 import VideoFav from './VideoFav'
 import { ToastContainer, toast } from 'react-toastify';
 import PlaylistifySplash from "../WelcomePage/PlaylistifySplash";
+import { useAuth0 } from "@auth0/auth0-react";
 import 'react-toastify/dist/ReactToastify.css';
+
 
 function FavoritesList() {
   // state variable 
+  const {user, isAuthenticated} = useAuth0();
   const [favorites, setFavorites] = useState([]);
   const [loading, setLoading] = useState(true);
   const [totalItems, setTotalItems] = useState(null);
@@ -38,6 +41,7 @@ function FavoritesList() {
      
       .catch((error) => console.log(error));
     let arr = [];
+   
     for (let i = 0; i < favorites.length; i++) {
       let favoriteId = favorites[i];
       fetch(
@@ -51,7 +55,7 @@ function FavoritesList() {
             console.log(error);
           }
           
-          arr.push(data);
+          arr.push({data,favoriteId});
 
           console.log(arr);
           if (arr.length === totalItems) {
@@ -83,33 +87,30 @@ const  handleDelete = async (videoId) => {
       console.error(error);
     }
   }
- 
+//  console.log(videos[0].items[0].id)
 
   return (
     <>
+    <p className="user-name"> Hey {isAuthenticated && user.name}👋</p>
       {videos && videos.length === 0 ? (
         <div id="show-loader" className={`${loading ? 'show' : 'hide'}`}>
           <PlaylistifySplash />
         </div>
       ) : (
         <div className={`${loading ? 'hide' : 'show'}`}>
-          {videos.map((e, i) => {
-            return (
-              <> 
-                <VideoFav
-                  title={e.items[0].snippet.title}
-                  thumbnail={
-                    e.items[0].snippet.thumbnails.high
-                      ? e.items[0].snippet.thumbnails.high.url
-                      : "/Images/img-not-found.png"
-                  }
-                  channel={e.items[0].snippet.channelTitle}
-                  onDelete={() => handleDelete(favorites[i])}
-                />
-                <ToastContainer />
-                </>
-            );
-          })}
+          
+            
+            { videos && videos.length > 0 && videos.map((e, i) => {
+  return (
+    <div key={i} className="video-iframe">
+      <VideoFav favoriteId={e.favoriteId} />
+      <ToastContainer />
+    </div>
+  );
+}
+)}
+
+          
         </div>
       )}
     </>

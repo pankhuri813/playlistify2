@@ -10,6 +10,7 @@ function Navbar() {
   const [favorites, setFavorites] = useState([]);
 
 
+
   useEffect(() => {
     // get request to send to the server 
     fetch(`${process.env.REACT_APP_BACKEND_URL}/favorites/${sessionStorage.getItem("sub")}`)

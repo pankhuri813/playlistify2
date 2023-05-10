@@ -58,3 +58,22 @@
   
     color: #000000;
   }
+  .video-iframe{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    
+  }
+
+ 
+  .user-name{
+    position: absolute;
+    top: 2.7rem;
+    left: 6.5rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: "Poppins";
+    font-style: normal;
+    color: #977288;
+  }
