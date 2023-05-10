@@ -21,7 +21,7 @@ function Navbar() {
       })
      
       .catch((error) => console.log(error));
-    }
+    },[totalItems]
   )
    return (
     <div>
@@ -30,7 +30,7 @@ function Navbar() {
            <Link to = "/homepage"> <div className="about">Home</div> </Link>
            <Link to = "/about"> <div className="about">About</div> </Link>
             <div className="playlistify">Playlistify</div>
-          <Link to ="/favoritelist"><div>{totalItems}</div> <img className="love-icon" alt="" src="/Images/hearticon.png" /> </Link> 
+          <Link to ="/favoritelist"><div className='wishlist'>{totalItems}</div> <img className="love-icon" alt="" src="https://res.cloudinary.com/dqkwom77k/image/upload/v1683631442/png-transparent-heart-shape-cdr-hollow-love-text-heart-thumbnail_cew5hq.png" /> </Link> 
             <div className="user-profile">
               <Profile /> {/* add the Profile component here */}
             </div>

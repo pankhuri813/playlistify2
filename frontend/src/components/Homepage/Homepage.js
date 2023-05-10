@@ -12,8 +12,8 @@ const Homepage = () => {
       <div className="homepage-child" />
       <div className="steps-1" />
       <div className="heading-homepage3">“Teaching in the Internet age </div>
-      <img className="homepage-item" alt="" src="./Images/background.jpg" />
-      <img className="homepage-inner" alt="" src="./Images/laptop.jpg" />
+      <img className="homepage-item" alt="" src="https://res.cloudinary.com/dqkwom77k/image/upload/v1683611424/madison-bracaglia-fcWAwPKpkTU-unsplash_vddgrz.jpg" />
+      <img className="homepage-inner" alt="" src="https://res.cloudinary.com/dqkwom77k/image/upload/v1683611759/sergey-zolkin-_UeY8aTI6d0-unsplash_lc06eu.jpg" />
       
       
       <div className="homepage-child1" />
@@ -23,9 +23,9 @@ const Homepage = () => {
       
       <div className="types">
         <div className="browse-the-categories">Browse The Categories</div>
-       <Link to ='/dance'> <img className="types-child" alt="" src="./Images/dance.jpeg" /> </Link>
-        <Link to ='/cooking'> <img className="types-item" alt="" src="./Images/cooking.jpeg" /> </Link>
-        <Link to ='/drawing'> <img className="types-inner" alt="" src="./Images/drawing.jpeg" /> </Link>
+       <Link to ='/dance'> <img className="types-child" alt="" src="https://res.cloudinary.com/dqkwom77k/image/upload/v1683612225/Cupcakes_Conversation_with_Jesse_Scales_ballet_dancer___Ballet_News___Straight_from_the_stage_-_bringing_you_ballet_insights_gr9jvg.jpg" /> </Link>
+        <Link to ='/cooking'> <img className="types-item" alt="" src="https://res.cloudinary.com/dqkwom77k/image/upload/v1683613460/Browned_Butter_Vanilla_Bean_Madeleines_-_The_Kitchen_McCabe_yvnb0e.jpg" /> </Link>
+        <Link to ='/drawing'> <img className="types-inner" alt="" src="https://res.cloudinary.com/dqkwom77k/image/upload/v1683613487/Image_about_girl_in_Woman_by_Caglanur_on_We_Heart_It_q3oeoa.jpg" /> </Link>
         <div className="types-child1" />
         <div className="types-child2" />
         <div className="types-child3" />
