@@ -89,25 +89,38 @@ const Kathak = (props) => {
            {isFav===false ? <button
               className="favorite-btn"
               onClick={() => {
-                // setIsFav(!isFav);
-                const url = `${process.env.REACT_APP_BACKEND_URL}/favorites`;
-                const method = "PUT";
+                const url = `${process.env.REACT_APP_BACKEND_URL}/favorites/${sessionStorage.getItem("sub")}`;
+                const method = "GET";
                 const headers = { "Content-Type": "application/json" };
-                const body = JSON.stringify({
-                  userId: sessionStorage.getItem("sub"),
-                  playlistId: id,
-                });
-                fetch(url, { method, headers, body })
+                fetch(url, { method, headers })
                   .then((response) => response.json())
                   .then((data) => {
-                    console.log("PUT response:", data);
-                    setIsFav(!isFav);
-                    toast.success("Playlist succesfully added!")
+                    console.log("GET response:", data);
+                    if (data.includes(id)) {
+                      // Playlist already exists in favorites
+                      toast.warning("Playlist already added!");
+                    } else {
+                      // Playlist does not exist in favorites, add it
+                      const url = `${process.env.REACT_APP_BACKEND_URL}/favorites`;
+                      const method = "PUT";
+                      const headers = { "Content-Type": "application/json" };
+                      const body = JSON.stringify({
+                        userId: sessionStorage.getItem("sub"),
+                        playlistId: id,
+                      });
+                      fetch(url, { method, headers, body })
+                        .then((response) => response.json())
+                        .then((data) => {
+                          console.log("PUT response:", data);
+                          setIsFav(!isFav);
+                          toast.success("Playlist succesfully added!");
+                        })
+                        .catch((error) => console.error(error));
+                    }
                   })
                   .catch((error) => console.error(error));
-                  
-              }
-            }
+              }}
+              
             
             >
               <p>{isFav ? "Added to favourite" : "Add to favourites"}</p>

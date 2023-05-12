@@ -27,27 +27,27 @@ router.post('/add-user', async (req, res) => {
 
 
   router.put('/favorites', async (req, res) => {
-    const { userId,playlistId } = req.body;
-    try{
-         // get user data 
-      const user = await Favorite.findOne({userId});
-      console.log(user)
+    const { userId, playlistId } = req.body;
+    try {
+      const user = await Favorite.findOne({ userId });
       if (user) {
-        // If the user exists, update the favorites array
-        const arr=user.favorite;
-        arr.push(playlistId);
-        user.favorite=arr;
-        const savedPlaylist = await user.save();
-        res.status(200).json(savedPlaylist);
-
+        // Check if the playlist already exists in the user's favorites
+        if (user.favorite.includes(playlistId)) {
+          res.status(200).json({ message: "Playlist already exists in favorites" });
+        } else {
+          // If the playlist does not exist, add it to the favorites array
+          user.favorite.push(playlistId);
+          const savedPlaylist = await user.save();
+          res.status(200).json(savedPlaylist);
+        }
       } else {
-        res.status(402).json({ message: "User doesn't exists" });
+        res.status(402).json({ message: "User doesn't exist" });
       }
     } catch (error) {
-        console.log(error);
-        res.status(400).json({ error: error.message });
-      }
-    });
+      console.log(error);
+      res.status(400).json({ error: error.message });
+    }
+  });
   
   
   router.get('/favorites/:userId', async (req, res) => {

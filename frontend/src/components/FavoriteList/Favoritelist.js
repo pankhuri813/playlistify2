@@ -91,7 +91,7 @@ const  handleDelete = async (videoId) => {
 
   return (
     <>
-    <p className="user-name"> Hey {isAuthenticated && user.name}👋</p>
+    <p className="user-name"> {isAuthenticated && user.name}'s Playlists</p>
       {videos && videos.length === 0 ? (
         <div id="show-loader" className={`${loading ? 'show' : 'hide'}`}>
           <PlaylistifySplash />
@@ -104,6 +104,12 @@ const  handleDelete = async (videoId) => {
   return (
     <div key={i} className="video-iframe">
       <VideoFav favoriteId={e.favoriteId} />
+      <button
+        onClick={() => handleDelete(e.favoriteId)}
+        className="delete-btn"
+        >
+        <img className="delete-img"src="https://res.cloudinary.com/dqkwom77k/image/upload/v1683797956/transparent-delete-icon-email-icon-trash-icon-60240585ed03c6.0180224116129734459708-removebg-preview_lu4qae.png" alt=""/>
+      </button>
       <ToastContainer />
     </div>
   );

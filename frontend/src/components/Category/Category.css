@@ -81,10 +81,12 @@
   position: relative;
   
 }
-/* .kathak-category-container:hover {
+
+.kathak-category-container:hover {
   transform: scale(1.05);
  transition: transform 0.2s ease; 
-} */
+ 
+}
 .image-container:hover .overlay-text{
   opacity:1;
 }

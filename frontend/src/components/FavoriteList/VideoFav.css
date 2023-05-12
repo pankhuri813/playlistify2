@@ -1,3 +1,6 @@
+body{
+  overflow: hidden;
+}
 .main.video-card {
     display: flex;
     flex-direction: column;
@@ -62,7 +65,13 @@
     display: flex;
     justify-content: center;
     flex-direction: row;
-    
+  }
+  /* .video-player-container{
+    position: relative;
+    gap:2rem;
+  } */
+  .video-player-container{
+    margin-top: 10%;
   }
 
  
@@ -76,4 +85,8 @@
     font-family: "Poppins";
     font-style: normal;
     color: #977288;
+  }
+  .delete-img{
+    height: 3rem;
+
   }

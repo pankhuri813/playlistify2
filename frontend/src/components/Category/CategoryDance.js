@@ -10,13 +10,8 @@ const CategoryPage = () => {
       <div className="dance-categories">Dance - Categories</div>
 
       <Link to="/kathak">
-        <div className="category-container">
          <img className="kathak-category-container" alt="" src="../Images/kathak.jpeg" />
-           < div className="overlay-text">
-             <p>Kathak</p> 
-           </div>
-           </div>
-      
+        {/* <p className="hover-text">Kathak</p> */}
       </Link>
       <Link to="/hiphop">
         

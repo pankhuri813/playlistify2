@@ -34,15 +34,13 @@ const Homepage = () => {
         <div className="drawing">COOKING</div>
         <div className="dance-text">DANCE </div>
       </div>
-        <div className="process-1"> <p className="textinside">Login using your email and password. Feel free to use google authentication for an easier and non-troublesome experience.</p></div>
+        <div className="process-1"> <p className="textinside"> Login using your email and password. Feel free to use google authentication for an easier and non-troublesome experience.</p></div>
         <div className="circle-1"><p className="one"> 1 </p> </div>
          <div className="process-2"> <p className="textinside">Browse through our homepage and find what you want to learn and find resources that help you excel in your interests.</p></div>
          <div className="circle-2"> <p className="one"> 2 </p> </div>
          <div className="process-3"> <p className="textinside">Get the best playlist available on the internet and if that doesn'nt suit your taste, feel free to add your playlist to ensure both comfort and adaptability. </p></div>
          <div className="circle-3"> <p className="one"> 3  </p></div>
-         {/* <LogoutButton /> */}
-       {/* <Footer /> */}
-         
+        
     </div>
   );
 };

@@ -200,6 +200,9 @@
     cursor: pointer;
     font-size: 1.2rem;
     margin-right: 0.5rem;
+    display: flex;
+    align-items: center;
+    margin-top: 6.5rem;
   }
   .dragging{
     opacity:0.5;
