@@ -1,0 +1,71 @@
+.carousel {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .slider {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .slide {
+    flex: 0 0 100%;
+    margin-right: 10px;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .slide.active {
+    opacity: 1;
+  }
+  
+  .slider a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .slider img {
+    display: block;
+    width: 45rem;
+    height: 30rem;
+  }
+  
+  .slider h3 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+  }
+  
+  .slider p {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+  
+  .prev-button {
+    position: absolute;
+    top: 20rem;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  .next-button{
+    position: absolute;
+    top:20rem;
+    left:41rem;
+    border: none;
+    background: transparent;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  

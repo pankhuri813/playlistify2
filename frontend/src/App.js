@@ -10,6 +10,8 @@ import Favoritelist from "./components/FavoriteList/Favoritelist";
 import Cooking from './components/Category/CategoryCooking';
 import Drawing from './components/Category/CategoryDrawing';
 import PlaylistifySplash from "./components/WelcomePage/PlaylistifySplash";
+import Random from "./components/RadomVideos/Random"
+import Liked from "./components/Liked"
 import { useState, useEffect } from "react";
 
 // import Footer from "./components/Footer";
@@ -50,7 +52,10 @@ function App() {
        <Route path="/cooking" element={<Cooking />} />
        <Route path="/drawing" element={<Drawing />} /> 
        {/* <Route path= "/footer" element={<Footer />} /> */}
-      
+      <Route path="/random" element={<Random />} />
+      <Route path="/liked" element={<Liked />} />
+
+
 
        <Route path="/potrait" element={<Kathak name="Potrait" link="PLnWaXZaVfDBee0conbZOBdJfZLlDcU9im" />} />
        <Route path="/architecture" element={<Kathak name="Architecture" link="PLejnOfiq1zb8YQwUw8o6mk9Krw5-Icd_D" />} />

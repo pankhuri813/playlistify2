@@ -89,5 +89,30 @@ router.post('/add-user', async (req, res) => {
         res.status(400).json({ error: error.message });
       }
     });
+
+
+    router.get('/popular-playlists', (req, res) => {
+      User.aggregate([
+        { $unwind: '$favorite' },
+        {
+          $group: {
+            _id: '$favorite',
+            count: { $sum: 1 }
+          }
+        },
+        { $match: { count: { $gt: 1 } } },
+        { $sort: { count: -1 } },
+        { $limit: 10 }
+      ])
+        .then(result => {
+          // Map the playlist IDs from the result array
+          const popularPlaylists = result.map(item => item._id);
+          res.json(popularPlaylists);
+        })
+        .catch(error => {
+          console.error(error);
+          res.status(500).json({ error: 'Internal server error' });
+        });
+    });
     
     module.exports = router;

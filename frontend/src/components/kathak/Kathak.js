@@ -36,7 +36,8 @@ const Kathak = (props) => {
     const playlistId = link.split("list=")[1];
     playlistId && playlistId.match(/^[\w-]+$/)
       ? setId(playlistId)
-      : setErr("Invalid Youtube Playlist link");
+      : toast.warning("Invalid Playlist!")
+      // setErr("Invalid Youtube Playlist link");
     console.log("Playlist ID: ", playlistId);
   }
 
