@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+
 
 .about,
 .playlistiy {
@@ -13,7 +13,7 @@
   display: inline-block;
   width: 20.25rem;
   flex-shrink: 0;
-  padding-left: 190px;
+  padding-left: 98px;
 }
 .love-icon,
 .user-icon {
@@ -34,17 +34,18 @@
 .navbar-about {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 97.5rem;
+  left: 1rem;
+  /* width: 97.5rem; */
   overflow: hidden;
   display: flex;
   flex-direction: row;
-  padding: 0 8px;
+  /* padding: 0 8px; */
   box-sizing: border-box;
   align-items: center;
   justify-content: center;
-  gap: 11.5rem;
+  gap: 7.5rem;
   border-bottom: 1px dotted black;
+  width: 100vw;
 }
 .navbar-about :link{
   text-decoration: none;
@@ -73,10 +74,20 @@
 .wishlist{
   position:absolute;
   top:0.01rem;
-  left:78rem;
+  left:73.3rem;
   background-color: #EEDBDB;
   width:1.5rem;
   border-radius: 5rem;
   z-index:1;
   text-align: center;
+}
+.top-picks{
+ 
+  color: #000;
+  font-size: 21px;
+
+}
+
+.navbar-about :Link{
+  text-decoration: none;
 }

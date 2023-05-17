@@ -10,7 +10,7 @@ const CategoryPage = () => {
       <div className="dance-categories">Dance - Categories</div>
 
       <Link to="/kathak">
-         <img className="kathak-category-container" alt="" src="../Images/kathak.jpeg" />
+         <img className="kathak-category-container" alt="" src="https://res.cloudinary.com/dqkwom77k/image/upload/v1684317706/kathak1_rys8uq.jpg" />
         {/* <p className="hover-text">Kathak</p> */}
       </Link>
       <Link to="/hiphop">
@@ -18,7 +18,7 @@ const CategoryPage = () => {
         <img
           className="hiphop-container"
           alt=""
-          src="../Images/hiphop.jpg"
+          src="https://res.cloudinary.com/dqkwom77k/image/upload/v1684317705/hip_hop_loetio.jpg"
         />
       </Link>
       <Link to="/tap-dance">
@@ -26,7 +26,7 @@ const CategoryPage = () => {
         <img
           className="tapdance-container"
           alt=""
-          src="../Images/tapdance.jpeg"
+          src="https://res.cloudinary.com/dqkwom77k/image/upload/v1684317705/tap_dance_x51ton.jpg"
         />
       </Link>
       <Link to="/jazz">
@@ -34,7 +34,7 @@ const CategoryPage = () => {
         <img
           className="jazzdance-container"
           alt=""
-          src="../Images/jazzdance.jpg"
+          src="https://res.cloudinary.com/dqkwom77k/image/upload/v1684317705/jazzdance_xohvhp.jpg"
         />
       </Link>
       <Link to="/contemporary">
@@ -42,7 +42,7 @@ const CategoryPage = () => {
         <img
           className="contemporary-container"
           alt=""
-          src="../Images/contemporary.jpg"
+          src="https://res.cloudinary.com/dqkwom77k/image/upload/v1684317705/contemporary_scntry.jpg"
         />
       </Link>
     </div>

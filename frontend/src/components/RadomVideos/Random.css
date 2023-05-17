@@ -1,71 +1,83 @@
-.carousel {
-    position: relative;
-    width: 80%;
-    margin: 0 auto;
-  }
-  
-  .slider {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    transition: transform 0.5s ease-in-out;
-  }
-  
-  .slide {
-    flex: 0 0 100%;
-    margin-right: 10px;
-    transition: opacity 0.5s ease-in-out;
-  }
-  
-  .slide.active {
-    opacity: 1;
-  }
-  
-  .slider a {
-    text-decoration: none;
-    color: #333;
-  }
-  
-  .slider img {
-    display: block;
-    width: 45rem;
-    height: 30rem;
-  }
-  
-  .slider h3 {
-    margin: 10px 0;
-    font-size: 1.2rem;
-  }
-  
-  .slider p {
-    margin: 0;
-    font-size: 0.9rem;
-  }
-  
-  .prev-button {
-    position: absolute;
-    top: 20rem;
-    transform: translateY(-50%);
-    border: none;
-    background: transparent;
-    color: #fff;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-  .next-button{
-    position: absolute;
-    top:20rem;
-    left:41rem;
-    border: none;
-    background: transparent;
-    color: #fff;
-    font-size: 1.5rem;
-    cursor: pointer;
+.video-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  top: 5rem;
+}
 
-  }
-  
-  button:focus {
-    outline: none;
-  }
-  
+.video-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin:20px ;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #cab3c1;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s ease;
+}
+
+.video-card:hover {
+  opacity: 0.8;
+}
+
+.video-card img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.video-card h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.video-card p {
+  font-size: 1.7rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.views-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(219, 211, 221, 0.8);
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.video-card:hover .views-overlay {
+  opacity: 1;
+}
+
+.views {
+  font-size: 3rem;
+  margin-bottom: 5px;
+}
+
+.views-label {
+  font-size: 3rem;
+  color: #121012;
+}
+.random-heading{
+  margin-top: 7%;
+ margin-left: 29%;
+  font-size: 2.5rem;
+    font-weight: 700;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: "Poppins";
+    font-style: normal;
+    color: #977288;
+}

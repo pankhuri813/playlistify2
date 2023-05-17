@@ -1,50 +1,49 @@
+import Navbar from "../Navbar/Navbar";
 import "./Category.css";
+
 import { Link } from "react-router-dom";
 
 const CategoryPage = () => {
   return (
     <div className="categorypage">
+      <Navbar />
       <div className="dance-categories"> Cooking - Categories</div>
-      <div className="categorypage-child" />
-      <div className="categorypage-item" />
-      <div className="categorypage-inner" />
-      <div className="rectangle-div" />
-      <div className="categorypage-child1" />
-      <Link to="/vegan">
-        {" "}
-        <img className="rectangle-icon" alt="" src="../Images/Vegan.jpg" />{" "}
+
+      <Link to="/non-veg">
+         <img className="kathak-category-container" alt="" src="https://res.cloudinary.com/dqkwom77k/image/upload/v1683612642/non_veg_wsa5hx.jpg" />
+        {/* <p className="hover-text">Kathak</p> */}
       </Link>
       <Link to="/thai">
-        {" "}
+        
         <img
-          className="categorypage-child2"
+          className="hiphop-container"
           alt=""
-          src="../Images/thaifood.jpg"
-        />{" "}
-      </Link>
-      <Link to="/non-veg">
-        {" "}
-        <img
-          className="categorypage-child3"
-          alt=""
-          src="../Images/nonveg.jpg"
-        />{" "}
-      </Link>
-      <Link to="/chinese">
-        {" "}
-        <img
-          className="categorypage-child4"
-          alt=""
-          src="../Images/chinese.jpeg"
-        />{" "}
+          src="https://res.cloudinary.com/dqkwom77k/image/upload/v1683612675/thai_food_e2arnz.jpg"
+        />
       </Link>
       <Link to="/south-indian">
-        {" "}
+       
         <img
-          className="categorypage-child5"
+          className="tapdance-container"
           alt=""
-          src="../Images/south-indian.jpeg"
-        />{" "}
+          src="https://res.cloudinary.com/dqkwom77k/image/upload/v1683612487/South_indian_kybgoo.jpg"
+        />
+      </Link>
+      <Link to="/chinese">
+       
+        <img
+          className="jazzdance-container"
+          alt=""
+          src="https://res.cloudinary.com/dqkwom77k/image/upload/v1683612534/chinese_rujrca.jpg"
+        />
+      </Link>
+      <Link to="/vegan">
+       
+        <img
+          className="contemporary-container"
+          alt=""
+          src="https://res.cloudinary.com/dqkwom77k/image/upload/v1683612483/Vegan_ficlsg.jpg"
+        />
       </Link>
     </div>
   );

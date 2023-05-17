@@ -11,7 +11,7 @@ import Cooking from './components/Category/CategoryCooking';
 import Drawing from './components/Category/CategoryDrawing';
 import PlaylistifySplash from "./components/WelcomePage/PlaylistifySplash";
 import Random from "./components/RadomVideos/Random"
-import Liked from "./components/Liked"
+
 import { useState, useEffect } from "react";
 
 // import Footer from "./components/Footer";
@@ -53,7 +53,7 @@ function App() {
        <Route path="/drawing" element={<Drawing />} /> 
        {/* <Route path= "/footer" element={<Footer />} /> */}
       <Route path="/random" element={<Random />} />
-      <Route path="/liked" element={<Liked />} />
+     
 
 
 

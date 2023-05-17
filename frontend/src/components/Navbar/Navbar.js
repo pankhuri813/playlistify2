@@ -30,6 +30,7 @@ function Navbar() {
         <nav className="navbar-about">
            <Link to = "/homepage"> <div className="about">Home</div> </Link>
            <Link to = "/about"> <div className="about">About</div> </Link>
+           <Link to = "/random"><div className='top-picks' >Top-Pick</div></Link>
             <div className="playlistify">Playlistify</div>
           <Link to ="/favoritelist"><div className='wishlist'>{totalItems}</div> <img className="love-icon" alt="" src="https://res.cloudinary.com/dqkwom77k/image/upload/v1683790007/pokweurgf_wzd8c9.png" /> </Link> 
             <div className="user-profile">

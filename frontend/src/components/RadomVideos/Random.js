@@ -1,70 +1,52 @@
 import React, { useState, useEffect } from 'react';
 import './Random.css'
 
-function App() {
+const YouTubeVideos = () => {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    const API_KEY = 'AIzaSyDVrPj052cWFmMOYMRoUiwJeFzArkgpwLE';
-    const BASE_URL = 'https://www.googleapis.com/youtube/v3/';
+    const fetchVideos = async () => {
+      try {
+        const response = await fetch(
+          `https://www.googleapis.com/youtube/v3/videos?part=snippet%2Cstatistics&chart=mostPopular&maxResults=10&key=AIzaSyDVrPj052cWFmMOYMRoUiwJeFzArkgpwLE`
+        );
 
-    fetch(`${BASE_URL}videos?part=snippet,statistics&chart=mostPopular&regionCode=US&maxResults=10&key=${API_KEY}`)
-      .then(response => response.json())
-      .then(data => {
-        const videos = data.items.map(video => ({
-          id: video.id,
-          title: video.snippet.title,
-          thumbnail: video.snippet.thumbnails.high.url,
-          views: video.statistics.viewCount
-        }));
+        if (!response.ok) {
+          throw new Error('Error fetching videos');
+        }
 
-        setVideos(videos);
-      })
-      .catch(error => console.error(error));
+        const data = await response.json();
+        setVideos(data.items);
+      } catch (error) {
+        console.log('Error fetching videos:', error);
+      }
+    };
+
+    fetchVideos();
   }, []);
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const length = videos.length;
-
-  const nextSlide = () => {
-    setCurrentIndex(currentIndex === length - 1 ? 0 : currentIndex + 1);
+  const handleVideoClick = (videoId) => {
+    window.open(`https://www.youtube.com/watch?v=${videoId}`, '_blank');
   };
 
-  const prevSlide = () => {
-    setCurrentIndex(currentIndex === 0 ? length - 1 : currentIndex - 1);
-  };
   return (
     <div>
-      <h1>Most Viewed YouTube Videos</h1>
-      {videos.length > 0 ? (
-        <div className="carousel">
-          <button className='prev-button' onClick={prevSlide}>Prev</button>
-          <button className='next-button'onClick={nextSlide}>Next</button>
-          <ul className="slider">
-            {videos.map((video, index) => (
-              <li
-                key={video.id}
-                className={index === currentIndex ? "slide active" : "slide"}
-              >
-                <a
-                  href={`https://www.youtube.com/watch?v=${video.id}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src={video.thumbnail} alt={video.title} />
-                  <h3>{video.title}</h3>
-                </a>
-                <p>Views: {video.views}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ) : (
-        <p>Loading...</p>
-      )}
+      <h1 className='random-heading'>Top 10 Most Viewed YouTube Videos</h1>
+      <div className="video-list">   
+        {videos.map((video) => (
+          <div className="video-card" key={video.id} onClick={() => handleVideoClick(video.id)}>
+            <img src={video.snippet.thumbnails.high.url} alt={video.snippet.title} />
+            <h2>{video.snippet.title}</h2>
+            <p>{video.snippet.channelTitle}</p>
+            <div className="views-overlay">
+              <span className="views">{video.statistics.viewCount}</span>
+              <span className="views-label">Views</span>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
-  
-}
+};
 
-export default App;
+export default YouTubeVideos;
