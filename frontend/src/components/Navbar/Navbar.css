@@ -32,7 +32,7 @@
   height: 3.5rem;
 }
 .navbar-about {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 1rem;
   /* width: 97.5rem; */
@@ -71,6 +71,30 @@
   font-weight: normal;
   color: #fff;
 }
+/* .tooltip{
+  position: relative;
+}
+.tooltip .tooltiptext{
+  visibility: hidden;
+  width: 3rem;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  border-radius: 1rem;
+  padding: 5px 0;
+
+
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+.tooltip:hover .tooltiptext{
+  visibility: visible;
+} */
+
+
 .wishlist{
   position:absolute;
   top:0.01rem;
@@ -81,6 +105,7 @@
   z-index:1;
   text-align: center;
 }
+
 .top-picks{
  
   color: #000;
@@ -91,3 +116,4 @@
 .navbar-about :Link{
   text-decoration: none;
 }
+

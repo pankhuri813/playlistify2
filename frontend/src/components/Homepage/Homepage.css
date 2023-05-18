@@ -162,7 +162,7 @@
 .types-item {
   position: absolute;
   top: 13.88rem;
-  left: 5.31rem;
+  left: 3.3rem;
   width: 23.31rem;
   height: 21.63rem;
   object-fit: cover;
@@ -171,10 +171,10 @@
 }
 .types-inner,
 .types-item {
-  left: 67.25rem;
+  left: 62rem;
 }
 .types-inner {
-  left: 36.25rem;
+  left: 33rem;
 }
 .types-child1 {
   position: absolute;
@@ -187,29 +187,29 @@
 .types-child3 {
   position: absolute;
   top: 33.38rem;
-  left: 73.75rem;
+  left: 68.75rem;
   background-color: #EEDBDB;
   width: 11rem;
   height: 3rem;
 }
 .dance,
 .types-child3 {
-  left: 42.5rem;
+  left: 39.5rem;
 }
 .dance {
   top: 33.88rem;
-  left: 11rem;
+  left: 9rem;
 }
 .div.dance{
   left: 2rem;
 }
 .cooking {
   top: 34.19rem;
-  left: 45.5rem;
+  left: 42.5rem;
 }
 .dance-text{
    top: 34.7rem;
-  left: 14.5rem;
+  left: 12.5rem;
 }
 .cooking,
 .drawing,
@@ -219,7 +219,7 @@
 }
 .drawing {
   top: 34.19rem;
-  left: 77rem;
+  left: 72rem;
 }
 .types {
   top: 30.69rem;
@@ -252,7 +252,7 @@
     background-color: #EEDBDB;
     height: 21rem;
     width: 23.5rem;
-    left: 36.31rem;
+    left: 33.31rem;
     top: 85rem;
   }
 
@@ -261,7 +261,7 @@
     background-color: #EEDBDB;
     height: 21rem;
     width: 23.5rem;
-    left: 5.31rem;
+    left: 2.3100000000000005rem;
     top: 85rem;
   }
 
@@ -270,7 +270,7 @@
     background-color: #EEDBDB;
     height: 21rem;
     width: 23.5rem;
-    left: 67.25rem;
+    left: 64.25rem;
     top: 85rem;
   }
 
@@ -280,7 +280,7 @@
     height: 7rem;
     width: 8rem;
     top: 80rem;
-    left: 13rem;
+    left: 10rem;
     border-radius: 100%;
   }
   .circle-2{
@@ -289,7 +289,7 @@
     height: 7rem;
     width: 8rem;
     top: 80rem;
-    left: 44rem;
+    left: 41rem;
     border-radius: 100%;
   }
   .circle-3{
@@ -298,7 +298,7 @@
     height: 7rem;
     width: 8rem;
     top: 80rem;
-    left: 75rem;
+    left: 72rem;
     border-radius: 100%;
   }
 
@@ -308,7 +308,7 @@
     font-size: 1.3rem;
     font-weight: 600;
     }
-
+    
 
 
 

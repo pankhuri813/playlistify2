@@ -11,7 +11,7 @@ import Cooking from './components/Category/CategoryCooking';
 import Drawing from './components/Category/CategoryDrawing';
 import PlaylistifySplash from "./components/WelcomePage/PlaylistifySplash";
 import Random from "./components/RadomVideos/Random"
-
+import Footer from "./components/Footer/Footer";
 import { useState, useEffect } from "react";
 
 // import Footer from "./components/Footer";
@@ -41,7 +41,7 @@ function App() {
     </div>
     <div className= {`${loading ? 'hide' : 'show'}`} >
 
-     <Navbar />
+     
     <Routes>
        <Route path="/" element={<Welcome /> } />
        <Route path="/about" element ={<About />} />
@@ -51,7 +51,7 @@ function App() {
        <Route path = "/dance" element={<Dance />} />
        <Route path="/cooking" element={<Cooking />} />
        <Route path="/drawing" element={<Drawing />} /> 
-       {/* <Route path= "/footer" element={<Footer />} /> */}
+       <Route path= "/footer" element={<Footer />} />
       <Route path="/random" element={<Random />} />
      
 

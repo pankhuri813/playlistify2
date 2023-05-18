@@ -4,6 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import PlaylistifySplash from "../WelcomePage/PlaylistifySplash";
 import { useAuth0 } from "@auth0/auth0-react";
 import 'react-toastify/dist/ReactToastify.css';
+import Navbar from "../Navbar/Navbar";
 
 
 function FavoritesList() {
@@ -14,6 +15,7 @@ function FavoritesList() {
   const [totalItems, setTotalItems] = useState(null);
   const [videos, setVideos] = useState([]);
   const [error, setError] = useState("");
+  const [viewType, setViewType] = useState("list") //list or grid
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -87,39 +89,45 @@ const  handleDelete = async (videoId) => {
       console.error(error);
     }
   }
+
+  const handleViewTypeChange = (type) => {
+    setViewType(type);
+  }
 //  console.log(videos[0].items[0].id)
 
   return (
     <>
-    <p className="user-name"> {isAuthenticated && user.name}'s Playlists</p>
-      {videos && videos.length === 0 ? (
-        <div id="show-loader" className={`${loading ? 'show' : 'hide'}`}>
-          <PlaylistifySplash />
-        </div>
-      ) : (
-        <div className={`${loading ? 'hide' : 'show'}`}>
-          
-            
-            { videos && videos.length > 0 && videos.map((e, i) => {
-  return (
-    <div key={i} className="video-iframe">
-      <VideoFav favoriteId={e.favoriteId} />
-      <button
-        onClick={() => handleDelete(e.favoriteId)}
-        className="delete-btn"
-        >
-        <img className="delete-img"src="https://res.cloudinary.com/dqkwom77k/image/upload/v1683797956/transparent-delete-icon-email-icon-trash-icon-60240585ed03c6.0180224116129734459708-removebg-preview_lu4qae.png" alt=""/>
-      </button>
-      <ToastContainer />
+    <Navbar />
+    <p className="user-name">{isAuthenticated && user.name}'s Playlists</p>
+    <div className={`${loading ? 'show' : 'hide'}`} id="show-loader">
+      <PlaylistifySplash />
     </div>
-  );
-}
-)}
-
-          
+    <div className={`${loading ? 'hide' : 'show'}`}>
+      <div className="view-toggle">
+        <button className={`${viewType === 'list' ? 'active' : ''}`} onClick={() => handleViewTypeChange('list')}>
+          <img className=" view-icon list-view"src="https://res.cloudinary.com/dqkwom77k/image/upload/v1684341831/list-removebg-preview_pnjvr2.png" alt="" />
+        </button>
+        <button className={`${viewType === 'grid' ? 'active' : ''}`} onClick={() => handleViewTypeChange('grid')}>
+        <img  className="view-icon grid-view"src="https://res.cloudinary.com/dqkwom77k/image/upload/v1684341740/grid_ka2lzr.png" alt="" />
+        </button>
+      </div>
+      {videos.length === 0 ? (
+        <p>No playlists found.</p>
+      ) : (
+        <div className={`card-container ${viewType}`}>
+          {videos.map((video, i) => (
+            <div key={i} className="video-iframe">
+              <VideoFav favoriteId={video.favoriteId} />
+              <button onClick={() => handleDelete(video.favoriteId)} className="delete-btn">
+                <img className="delete-img" src="https://res.cloudinary.com/dqkwom77k/image/upload/v1683797956/transparent-delete-icon-email-icon-trash-icon-60240585ed03c6.0180224116129734459708-removebg-preview_lu4qae.png" alt="Delete" />
+              </button>
+              <ToastContainer />
+            </div>
+          ))}
         </div>
       )}
-    </>
+    </div>
+  </>
   );
   
     }

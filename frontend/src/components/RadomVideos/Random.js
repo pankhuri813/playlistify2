@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Random.css'
+import Navbar from '../Navbar/Navbar';
 
 const YouTubeVideos = () => {
   const [videos, setVideos] = useState([]);
@@ -31,6 +32,7 @@ const YouTubeVideos = () => {
 
   return (
     <div>
+      <Navbar />
       <h1 className='random-heading'>Top 10 Most Viewed YouTube Videos</h1>
       <div className="video-list">   
         {videos.map((video) => (

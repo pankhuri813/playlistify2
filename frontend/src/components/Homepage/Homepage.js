@@ -3,6 +3,7 @@ import "./Homepage.css";
 import Navbar from "../Navbar/Navbar";
 // import Footer from "../Footer"
 import { Link } from "react-router-dom";
+import Footer from '../Footer/Footer'
 
 const Homepage = () => {
   return (
@@ -41,6 +42,10 @@ const Homepage = () => {
          <div className="process-3"> <p className="textinside">Get the best playlist available on the internet and if that doesn'nt suit your taste, feel free to add your playlist to ensure both comfort and adaptability. </p></div>
          <div className="circle-3"> <p className="one"> 3  </p></div>
         
+        <div className="footer" style={{backgroundColor:"#eee6e6", position:"absolute", bottom:"0", width:"100%", height:"10%"}}>
+          <Footer/> 
+          </div>
+     
     </div>
   );
 };
