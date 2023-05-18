@@ -12,6 +12,7 @@ import Drawing from './components/Category/CategoryDrawing';
 import PlaylistifySplash from "./components/WelcomePage/PlaylistifySplash";
 import Random from "./components/RadomVideos/Random"
 import Footer from "./components/Footer/Footer";
+import Blog from "./components/Blogpage/Blog";
 import { useState, useEffect } from "react";
 
 // import Footer from "./components/Footer";
@@ -53,7 +54,7 @@ function App() {
        <Route path="/drawing" element={<Drawing />} /> 
        <Route path= "/footer" element={<Footer />} />
       <Route path="/random" element={<Random />} />
-     
+     <Route path="/blog" element={<Blog />}/>
 
 
 

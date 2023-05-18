@@ -98,7 +98,7 @@ const  handleDelete = async (videoId) => {
   return (
     <>
     <Navbar />
-    <p className="user-name">{isAuthenticated && user.name}'s Playlists</p>
+    {/* <p className="user-name">{isAuthenticated && user.name}'s Playlists</p> */}
     <div className={`${loading ? 'show' : 'hide'}`} id="show-loader">
       <PlaylistifySplash />
     </div>
@@ -127,6 +127,26 @@ const  handleDelete = async (videoId) => {
         </div>
       )}
     </div>
+    <form>
+      <div className="category-side"> Categories</div>
+      <div className="form-control">
+        <button>Kathak</button>
+        <button>Tap-dance</button>
+        <button>Hip-Hop</button>
+        <button>Contemporary</button>
+        <button>Jazz</button>
+        <button>Non-veg</button>
+        <button>Vegan</button>
+        <button>South-Indian</button>
+        <button>Chinese</button>
+        <button>Thai</button>
+        <button>Architecture</button>
+        <button>Acrylic</button>
+        <button>Caricature</button>
+        <button>Cartoon</button>
+        <button>Potrait</button>
+      </div>
+    </form>
   </>
   );
   
