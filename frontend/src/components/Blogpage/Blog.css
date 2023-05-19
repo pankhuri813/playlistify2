@@ -39,6 +39,31 @@
     border-radius: 4px;
     background-color: #c1abab;
 }
-/* .bg-pink{
-    height: 20%;
-} */
+.text-content-blog{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: -40px;
+    color: #9c8282;
+    font-size: 25px;
+    word-spacing: 4px;
+    text-align: center;
+    font-family:'Ysabeau', sans-serif
+}
+.welcome-section-blog{
+    /* overflow: hidden; */
+    background-color: #EEDBDB;
+    width: 90em;
+  
+}
+.welcome-box{
+    margin-left: 46em;
+    margin-top: -30em;
+    /* background-color: #9c8282; */
+    width: 40em ;
+    height: 29em;
+}
+.welcome-box-img{
+    margin-Top: 30px;
+     margin-Left:50px;
+      height:30em;
+}

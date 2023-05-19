@@ -5,13 +5,16 @@ import Navbar from '../Navbar/Navbar'
 import SideBar from './SideBar'
 
 function NoteContainer() {
+    const addNote = (color) => {
+        
+    }
   return (
     
     <div className='note-container'>
         
         <Navbar />
-       <div className='sidebar' > <SideBar />
-        <h2>Notes</h2>
+       <div className='sidebar' > <SideBar addNote= {addNote} />
+        <h2 style={{marginBottom:"20px"}}>Notes</h2>
         <div className='note-container-notes custom-scroll'>
         <Note 
         note= {
