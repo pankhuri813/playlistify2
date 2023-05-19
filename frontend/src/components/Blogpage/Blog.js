@@ -18,7 +18,9 @@ const Blog = () => {
                 
             </div>
             <div className="blog-middlesection">
-            <div> 
+                
+            <div style={{display:"flex", flexDirection:"column"}}> 
+            <img style={{margin:"-487px"}} className="bg-pink" src="/images/line.png" alt=""/> <h2 style={{ position:"absolute", left: '39vw',top: '116vh', color:"#9c8282", fontSize:"xx-large"}}> How Can you Succeed?</h2>
                 <img src="https://res.cloudinary.com/dqkwom77k/image/upload/v1684432453/WhatsApp_Image_2023-05-18_at_11.20.10_PM_auozuv.jpg" alt="" /> 
                <h3> hoefer </h3>
                 <p>lorem ki ma ka bhosda behnchod hata jegfugkaweuv</p></div>

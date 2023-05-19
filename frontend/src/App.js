@@ -13,7 +13,9 @@ import PlaylistifySplash from "./components/WelcomePage/PlaylistifySplash";
 import Random from "./components/RadomVideos/Random"
 import Footer from "./components/Footer/Footer";
 import Blog from "./components/Blogpage/Blog";
+import Note from './components/Notes/NoteContainer'
 import { useState, useEffect } from "react";
+import Notes from "./components/Notes/Notes";
 
 // import Footer from "./components/Footer";
 function App() {
@@ -55,7 +57,7 @@ function App() {
        <Route path= "/footer" element={<Footer />} />
       <Route path="/random" element={<Random />} />
      <Route path="/blog" element={<Blog />}/>
-
+    <Route path='/note' element={<Note/>}/>
 
 
        <Route path="/potrait" element={<Kathak name="Potrait" link="PLnWaXZaVfDBee0conbZOBdJfZLlDcU9im" />} />
