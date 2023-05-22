@@ -35,7 +35,7 @@ function Navbar() {
           </div>
         </Link>
         <Link to="/random">
-          <div className='top-picks'>Top-Pick</div>
+          <div className='top-picks'>Top - 10</div>
         </Link>
         <div className="playlistify">Playlistify</div>
         <Link to ="/notes">
