@@ -6,14 +6,15 @@
   font-size: 21px;
   color: #000;
   text-align: left;
+  
 }
 .playlistify {
-  font-size: 30px;
+  font-size: 36px;
   /* font-family: 'Italianno'; */
   display: inline-block;
-  width: 20.25rem;
+  
   flex-shrink: 0;
-  padding-left: 98px;
+  padding-left: 9px;
 }
 .love-icon,
 .user-icon {
@@ -26,15 +27,18 @@
 .love-icon{
     width: 2.3rem;
     height: 2rem;
+  
 }
 .user-icon {
   width: 2.75rem;
   height: 3.5rem;
+  
+ 
 }
-.navbar-about {
+.home-pick {
   position: relative;
   top: 0;
-  left: 1rem;
+  left: -5rem;
   /* width: 97.5rem; */
   overflow: hidden;
   display: flex;
@@ -43,19 +47,27 @@
   box-sizing: border-box;
   align-items: center;
   justify-content: center;
-  gap: 7.5rem;
-  border-bottom: 1px dotted black;
+  gap: 6rem;
+
+
   width: 100vw;
 }
-.navbar-about :link{
+.home-pick :link{
   text-decoration: none;
+}
+.blog-pick  {
+  color: #000;
+  font-size: 23px;
+}
+.about{
+  margin-left: 0em;
 }
 
 
 .user-profile {
   display: flex;
   align-items: center;
-  margin-right: 1rem;
+  margin-right: -9em;
 }
 
 .user-profile img {
@@ -98,7 +110,7 @@
 .wishlist{
   position:absolute;
   top:0.01rem;
-  left:73.3rem;
+  left:78.5rem;
   background-color: #EEDBDB;
   width:1.5rem;
   border-radius: 5rem;
@@ -113,7 +125,9 @@
 
 }
 
-.navbar-about :Link{
-  text-decoration: none;
-}
 
+.notes-pick{
+ color: #000;
+ width: 1em;
+ margin-left: 7em;
+}
