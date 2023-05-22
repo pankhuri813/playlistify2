@@ -15,7 +15,7 @@ const LoginButton = () => {
     });
   };
 
-  return <button style={{backgroundColor: "#EEDBDB", borderRadius: "5rem", border:"none", fontFamily: "Andika"} }className='login' onClick={onLoginClick}>Try Now</button>;
+  return <button style={{backgroundColor: "#EEDBDB", borderRadius: "5rem", border:"none", fontFamily: "Andika", color:"#9c8282", height:"2.6em", fontSize:"1em"} }className='login' onClick={onLoginClick}>Try Now</button>;
 };
 
 export default LoginButton;
