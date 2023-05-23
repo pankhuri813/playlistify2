@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 
 import { MdDelete } from 'react-icons/md';
 import {FaSave} from 'react-icons/fa';
@@ -6,9 +7,12 @@ import {FaSave} from 'react-icons/fa';
 
 import './Notes.css'
 
-// let timer = 500,
-//   timeout;
+
 function Note(props) {
+
+  const [textValue, setTextValue] = useState(props.note.text);
+
+  
   const formatDate = (value) => {
     if (!value) return "";
 
@@ -38,20 +42,23 @@ function Note(props) {
     const month = monthNames[date.getMonth()];
     
     return `${hrs}:${min} ${amPm} ${day} ${month}`;
-  }    
+  };
+  
+  
+  const handleTextChange = (event) => {
+    setTextValue(event.target.value);
+  };
+  const handleSaveClick = () => {
+    // Save the text value to the backend here
+    // You can make an API request or use any other method to save the data
+    console.log("Saving text:", textValue);
+  };
 
-  // const debounce = (func) => {
-  //   clearTimeout(timeout);
-  //   timeout = setTimeout(func, timer);
-  // };
-
-  // const updateText = (text, id) => {
-  //   debounce(() => props.updateText(text, id));
-  // };
+ 
 
   return (
     <div className="note" style={{ backgroundColor: props.note.color }}>
-      <FaSave  style={{marginLeft:"15em"}}/>
+      <FaSave  style={{marginLeft:"15em"}} onClick={handleSaveClick}/>
       <textarea
         className="note_text"
         defaultValue={props.note.text}
