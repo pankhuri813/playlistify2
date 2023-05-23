@@ -6,22 +6,26 @@ import SideBar from './SideBar'
 
 
 function NoteMain () {
-    const [notes, setNotes] = useState (
-        JSON.parse(localStorage.getItem("notes-app")) || []
-    );
-    const addNote = (color) => {
-      const date = new Date();
-     const asiaTime = date.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' });
+  const [notes, setNotes] = useState(
+    JSON.parse(localStorage.getItem("notes-app")) || []
+  );
+  
+  const addNote = (color) => {
+    const date = new Date();
+    const asiaTime = date.toLocaleString('en-US', { timeZone: "Asia/Kolkata" });
+  
+    const tempNotes = [...notes];
+    const newNote = {
+      noteId: Date.now() + "" + Math.floor(Math.random() * 78),
+      text:"",
+      noteTime: asiaTime,
+      color,
+    };
+    tempNotes.push(newNote);
+    setNotes(tempNotes);
+  };
+  
 
-        const tempNotes = [...notes];
-        tempNotes.push({
-            id:Date.now() + "" + Math.floor(Math.random() * 78), 
-            text: "",
-            time: asiaTime,
-            color,
-        });
-        setNotes(tempNotes);
-    }
     const deleteNote = (id) => {
         const tempNotes = [...notes];
     
@@ -32,15 +36,15 @@ function NoteMain () {
         setNotes(tempNotes);
       };
     
-      const updateText = (text, id) => {
-        const tempNotes = [...notes];
+      // const updateText = (text, id) => {
+      //   const tempNotes = [...notes];
     
-        const index = tempNotes.findIndex((item) => item.id === id);
-        if (index < 0) return;
+      //   const index = tempNotes.findIndex((item) => item.id === id);
+      //   if (index < 0) return;
     
-        tempNotes[index].text = text;
-        setNotes(tempNotes);
-      };
+      //   tempNotes[index].text = text;
+      //   setNotes(tempNotes);
+      // };
        
       useEffect(() => {
         localStorage.setItem("notes-app", JSON.stringify(notes));
@@ -56,7 +60,7 @@ function NoteMain () {
             <NoteContainer 
             notes ={notes}
             deleteNote = {deleteNote}
-            updateText = {updateText}
+            // updateText = {updateText}
             />
             
         </div>

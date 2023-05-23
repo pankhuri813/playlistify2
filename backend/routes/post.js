@@ -1,5 +1,6 @@
 const express = require("express")
 const Favorite = require("../favorite.js")
+// const User = require('../favorite.js'); 
 
 const router = express.Router()
 
@@ -114,5 +115,7 @@ router.post('/add-user', async (req, res) => {
           res.status(500).json({ error: 'Internal server error' });
         });
     });
+    
+   
     
     module.exports = router;
