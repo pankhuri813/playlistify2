@@ -10,11 +10,14 @@ function NoteMain () {
         JSON.parse(localStorage.getItem("notes-app")) || []
     );
     const addNote = (color) => {
+      const date = new Date();
+     const asiaTime = date.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' });
+
         const tempNotes = [...notes];
         tempNotes.push({
             id:Date.now() + "" + Math.floor(Math.random() * 78), 
             text: "",
-            time: Date.now(),
+            time: asiaTime,
             color,
         });
         setNotes(tempNotes);
