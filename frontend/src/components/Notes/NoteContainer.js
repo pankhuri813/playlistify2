@@ -17,7 +17,7 @@ function NoteContainer(props) {
             <Note
               key={item.noteId}
               note={item}
-              deleteNote={props.deleteNote}
+              deleteNote ={props.deleteNote}
             />
           ))
         ) : (

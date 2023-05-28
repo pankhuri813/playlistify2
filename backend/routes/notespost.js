@@ -22,15 +22,22 @@ router.post('/notes/:userId', (req, res) => {
     
 });
 
-
-router.delete('/notes/:id', (req,res) => {
-    const {id} = req.params;
-     
-    
-    Notes.findByIdAndDelete(id)
-    .then(() => {res.json({message:'note deleted succesfully'})
+// DELETE REQUEST FOR NOTES
+router.delete('/notes/:userId', (req,res) => {
+    const {userId} = req.params;
+    const { _id} = req.body;
+  console.log(_id)
+    Notes.findOneAndUpdate(
+      {userId},
+      {$pull:{notes:{_id}}},
+      {new: true}
+    )
+    .then((newArr) => {res.json({data: newArr.notes, message:'note deleted succesfully'})
   })
-  .catch((error) => res.status(500).json({error:"error deleting"}))
+  .catch((error) => {
+    console.log(error)
+    res.status(500).json({error:"error deleting"}
+  ) })
 })
 
 

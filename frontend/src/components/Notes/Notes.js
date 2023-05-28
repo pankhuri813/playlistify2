@@ -62,17 +62,18 @@ function Note(props) {
   }
 
   const handleDeleteClick = () => {
-    fetch(`${process.env.REACT_APP_BACKEND_URL}/notes/${props.note.id}`, {
-      method: "DELETE",
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Note deleted:", data);
-        props.deleteNote(props.note.id);
-      })
-      .catch((error) => {
-        console.log("Error deleting note:", error);
-      });
+    props.deleteNote( sessionStorage.getItem('sub'), props.note._id)
+  //   fetch(`${process.env.REACT_APP_BACKEND_URL}/notes/${props.note.id}`, {
+  //     method: "DELETE",
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       console.log("Note deleted:", data);
+  //       props.deleteNote(props.note.id);
+  //     })
+  //     .catch((error) => {
+  //       console.log("Error deleting note:", error);
+  //     });
   };
 
   return (

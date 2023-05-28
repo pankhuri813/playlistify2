@@ -12,7 +12,7 @@ function NoteMain() {
     fetch(`${process.env.REACT_APP_BACKEND_URL}/notes/${sessionStorage.getItem('sub')}`)
       .then((response) => response.json())
       .then((data) => {
-        setNotes(data);
+        setNotes(data );
       })
       .catch((error) => {
         console.log("Error fetching notes:", error);
@@ -52,15 +52,17 @@ function NoteMain() {
   
   
 
-  const deleteNote = (id) => {
+  const deleteNote = (id, noteId) => {
     fetch(`${process.env.REACT_APP_BACKEND_URL}/notes/${id}`, {
       method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ _id: noteId})
     })
       .then((response) => response.json())
       .then((data) => {
         console.log("Note deleted:", data);
-        const filteredNotes = notes.filter((note) => note.noteId !== id);
-        setNotes(filteredNotes);
+        // const filteredNotes = notes.pull((note) => note.noteId !== id);
+       data.data &&  setNotes(data.data);
       })
       .catch((error) => {
         console.log("Error deleting note:", error);
