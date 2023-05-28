@@ -11,7 +11,8 @@ import {
     IconButton,
     useColorModeValue,
 } from '@chakra-ui/react';
-import { ReactNode } from 'react';
+// import { ReactNode } from 'react';
+import {useState} from 'react'
 import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { BiMailSend } from 'react-icons/bi';
 
@@ -57,6 +58,28 @@ const ListHeader = ({ children }) => {
 };
 
 export default function LargeWithNewsletter() {
+    const [email ,setEmail] = useState('');
+    const handleSubmit = (e) => {
+        e.preventDefault(); 
+
+
+        // Make a POST request to the API endpoint
+        
+        fetch(`${process.env.REACT_APP_BACKEND_URL}/Update-email`, {
+            method: 'POST',
+            headers:{
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email}),
+        })
+        .then ((response) => response.json())
+        .then((data) => {
+            console.log(data);
+        })
+        .catch((error) => {
+            console.log('Error was', error)
+        })
+    }
     return (
         <Box
             bg={useColorModeValue('gray.50', 'gray.900')}
@@ -113,8 +136,10 @@ export default function LargeWithNewsletter() {
                                 border={0}
                                 _focus={{
                                     bg: 'whiteAlpha.300',
-                                   
+                    
                                 }}
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                             />
                             <IconButton
                                 bg={useColorModeValue('green.400', 'green.800')}
@@ -124,7 +149,7 @@ export default function LargeWithNewsletter() {
                                     bg: '#EEDBDB',
                                 }}
                                 aria-label="Subscribe"
-                                icon={<BiMailSend />}
+                                icon={<BiMailSend  onClick={handleSubmit}/>}
                             />
                         </Stack>
                     </Stack>
@@ -133,4 +158,3 @@ export default function LargeWithNewsletter() {
         </Box>
     );
 }
-//   export default Logo

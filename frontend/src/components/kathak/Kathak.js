@@ -3,6 +3,8 @@ import VideoCard from "./VideoCard/VideoCard"
 import "./Kathak.css"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+// import { useLocation } from 'react-router-dom';
+import Navbar from '../Navbar/Navbar'
 
 const Kathak = (props) => {
   const [link, setLink] = useState("");
@@ -11,6 +13,9 @@ const Kathak = (props) => {
   const [id, setId] = useState("");
   const [videos, setVideos] = useState([]);
   const [err, setErr] = useState("");
+  // const location = useLocation();
+  // const currentPath = location.pathname;
+
 
   useEffect(() => {
     if (!id) {
@@ -48,8 +53,11 @@ const Kathak = (props) => {
   }
   console.log(err);
 
-  return (
+  return ( 
+    <>
+    <Navbar />
     <div className="kathak-container">
+      
       <div className="hero-section">
         <h1 className="heading">{props.name}</h1>
         <div className="hero-main">
@@ -108,7 +116,9 @@ const Kathak = (props) => {
                       const body = JSON.stringify({
                         userId: sessionStorage.getItem("sub"),
                         playlistId: id,
+                        
                       });
+                     
                       fetch(url, { method, headers, body })
                         .then((response) => response.json())
                         .then((data) => {
@@ -160,7 +170,9 @@ const Kathak = (props) => {
         err
       )}
     </div>
+    </>
   );
 };
+
 
 export default Kathak;

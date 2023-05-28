@@ -1,10 +1,28 @@
 const express = require("express")
 const Favorite = require("../favorite.js")
-// const User = require('../favorite.js'); 
+const User = require("../favorite.js"); 
+const nodemailer = require('nodemailer');
+const validator = require('validator');
+
+
+
 
 const router = express.Router()
 
+// Set up your email credentials and configuration
+const transporter = nodemailer.createTransport({
+  service: 'Gmail',
+  auth: {
+    user: 'pihu.srivastava717@gmail.com',
+    pass: ''
+  }
+});
+function isValidEmail(email) {
+  return validator.isEmail(email);
+}
 
+
+// SAVE USER DETAILS IN DATABASE
 router.post('/add-user', async (req, res) => {
     const { userId,name } = req.body;
 
@@ -26,14 +44,15 @@ router.post('/add-user', async (req, res) => {
   });
 
 
-
+ // ADDING PLAYLIST TO FAVORITE DATABASE
   router.put('/favorites', async (req, res) => {
     const { userId, playlistId } = req.body;
+    console.log(req.body)
     try {
       const user = await Favorite.findOne({ userId });
       if (user) {
         // Check if the playlist already exists in the user's favorites
-        if (user.favorite.includes(playlistId)) {
+        if (user.favorite.includes(playlistId) ){
           res.status(200).json({ message: "Playlist already exists in favorites" });
         } else {
           // If the playlist does not exist, add it to the favorites array
@@ -50,7 +69,30 @@ router.post('/add-user', async (req, res) => {
     }
   });
   
-  
+  router.put('/notes', async (req, res) => {
+    const {  noteId, noteTime, updatedNote, color } = req.body;
+    console.log(req.body)
+    try {
+      const user = await Favorite.findOne({ notes });
+      if (user) {
+        // Check if the playlist already exists in the user's favorites
+        if (user.notes.includes(noteId, noteTime, updatedNote, color) ){
+          res.status(200).json({ message: "Playlist already exists in favorites" });
+        } else {
+          // If the playlist does not exist, add it to the favorites array
+          user.notes.push(noteId, noteTime, updatedNote, color);
+          const savedNotes = await user.save();
+          res.status(200).json(savedNotes);
+        }
+      } else {
+        res.status(402).json({ message: "User doesn't exist" });
+      }
+    } catch (error) {
+      console.log(error);
+      res.status(400).json({ error: error.message });
+    }
+  });
+  //GETTING SAVED PLAYLIST FROM DATABASE ON FAVORITELIST PAGE
   router.get('/favorites/:userId', async (req, res) => {
     const { userId } = req.params;
   
@@ -69,7 +111,7 @@ router.post('/add-user', async (req, res) => {
       }
     });
     
-
+    // DELETE THE PLAYLIST FROM FAVORITES
     router.put('/favorites-delete', async (req, res) => {
       const { userId, playlistId } = req.body;
     
@@ -92,30 +134,98 @@ router.post('/add-user', async (req, res) => {
     });
 
 
-    router.get('/popular-playlists', (req, res) => {
-      User.aggregate([
-        { $unwind: '$favorite' },
-        {
-          $group: {
-            _id: '$favorite',
-            count: { $sum: 1 }
-          }
-        },
-        { $match: { count: { $gt: 1 } } },
-        { $sort: { count: -1 } },
-        { $limit: 10 }
-      ])
-        .then(result => {
-          // Map the playlist IDs from the result array
-          const popularPlaylists = result.map(item => item._id);
-          res.json(popularPlaylists);
-        })
-        .catch(error => {
-          console.error(error);
-          res.status(500).json({ error: 'Internal server error' });
-        });
-    });
-    
    
+      
+    // router.put('/save-notes/:id', async (req, res) => {
+    //   const {  noteId, noteTime, updatedNote, color } = req.body;
+    //   console.log(req.body);
+    
+    //   try {
+    //     const user = await Favorite.findOne({ _id:req.params.id });
+    //     console.log(user)
+    //     const arr = user.notes || [ ];
+    //     arr.push({ noteId, noteTime, color, updatedText: updatedNote });
+    //     console.log(arr);
+    //     user.notes= arr;
+    //     const savedUser = await user.save();
+    //     if(savedUser) {
+    //       res.status(201).json({message : "sucess"})
+    //     }
+    //     else{
+    //       res.status(500).json({error : "try agains"})
+    //     }
+    //     // if (!user) {
+    //     //   return res.status(404).json({ message: "User not found" });
+    //     // }
+    
+    //     // user.notes.push({ noteId, noteTime, color, updatedText: updatedNote });
+    //     // // const savedUser = await user.save();
+    //     // res.status(200).json(savedUser);
+    //   } catch (e) {
+    //     console.log(e);
+    //     // res.status(500).json({ message: "Internal Server Error" });
+    //   }
+    // });
+
+    
+    
+    // router.put('/save-notes', async (req, res) => {
+    //   const { noteId, noteTime, updatedNote, color } = req.body;
+    //   console.log(req.body)
+    
+    //   try {
+    //     const user = await Favorite.findOne({ userId });
+    //     if (!user) {
+    //       return res.status(404).json({ error: 'User not found' });
+    //     }
+    
+    //     const arr = user.notes || [];
+    //     arr.push({ noteId:noteId, noteTime:noteTime, color:color, updatedText: updatedNote });
+    
+    //     user.notes = arr;
+    //     const savedUser = await user.save();
+    
+    //     if (savedUser) {
+    //       return res.status(201).json({ message: 'Success' });
+    //     } else {
+    //       return res.status(500).json({ error: 'Failed to save notes' });
+    //     }
+    //   } catch (error) {
+    //     console.error(error);
+    //     return res.status(500).json({ error: 'Internal server error' });
+    //   }
+    // });
+    
+    
+
+    router.post('/Update-email',(req, res) => {
+      const { email } = req.body;
+      console.log(req.body)
+    
+      // Validate the email address (you can use a library like validator.js)
+      if (!isValidEmail(email)) {
+        return res.status(400).json({ message: 'Invalid email address' });
+      }
+    
+      // Compose the welcome email
+      const mailOptions = {
+        from: 'pankhuri.srivastava@kalvium.community',
+        to: {email},
+        subject: 'Welcome to My Site',
+        text: 'Thank you for signing up. Welcome to our site!'
+      };
+    
+      // Send the email
+      transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+          console.error('Error sending email:', error);
+          return res.status(500).json({ message: 'Failed to send welcome email' });
+        }
+    
+        console.log('Welcome email sent:', info.response);
+        res.status(200).json({ message: 'Welcome email sent successfully' });
+      });
+    });
+  
     
     module.exports = router;

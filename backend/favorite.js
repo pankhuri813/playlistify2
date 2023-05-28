@@ -14,23 +14,30 @@ const favoriteSchema = new Schema({
     type: Array,
     default: [],
   },
-  notes: {
-    type: [{
-      noteId: {
-        type: String,
-        required: true,
-      },
-      noteDate: {
-        type: Date,
-        required: true,
-      },
-      noteTime: {
-        type: String,
-        required: true,
-      },
-    }],
-    default: [],
-  },
+  notes:  
+    [
+      {
+        noteId: {
+          type: String,
+          required: true,
+        },
+        noteTime:{
+          type: String,
+          required: true,
+        },
+        color: {
+          type: String,
+          required: true,
+        },
+        text : {
+          type: String,
+          required: true,
+        },
+        
+      }
+    ]
+  
+  
 });
 
 module.exports = mongoose.model("user", favoriteSchema);

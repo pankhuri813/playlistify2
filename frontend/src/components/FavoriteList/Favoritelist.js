@@ -127,7 +127,7 @@ const  handleDelete = async (videoId) => {
         </div>
       )}
     </div>
-    <form>
+    {/* <form>
       <div className="category-side"> Categories</div>
       <div className="form-control">
         <button>Kathak</button>
@@ -146,7 +146,7 @@ const  handleDelete = async (videoId) => {
         <button>Cartoon</button>
         <button>Potrait</button>
       </div>
-    </form>
+    </form> */}
   </>
   );
   

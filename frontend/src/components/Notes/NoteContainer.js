@@ -1,33 +1,23 @@
-import React from "react";
+// NoteContainer.js
 
-import Note from './Notes'
+import React from "react";
+import Note from "./Notes";
 
 import "./NoteContainer.css";
 
 function NoteContainer(props) {
-  const reverArray = (arr) => {
-    const array = [];
-
-    for (let i = arr.length - 1; i >= 0; --i) {
-      array.push(arr[i]);
-    }
-
-    return array;
-  };
-
-  const notes = reverArray(props.notes);
+  const notes = props.notes;
 
   return (
     <div className="note-container">
       <h2>Notes</h2>
       <div className="note-container_notes custom-scroll">
-        {notes?.length > 0 ? (
+        {notes.length > 0 ? (
           notes.map((item) => (
             <Note
-              key={item.id}
+              key={item.noteId}
               note={item}
               deleteNote={props.deleteNote}
-              updateText={props.updateText}
             />
           ))
         ) : (

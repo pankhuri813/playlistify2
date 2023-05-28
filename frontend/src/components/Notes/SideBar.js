@@ -11,7 +11,10 @@ function Sidebar(props) {
 
   return (
     <div className="sidebar">
-     <FaPlus style={{marginLeft:"3.8em", height:"4em"}} onClick={() => setListOpen(!listOpen)} />
+     <FaPlus style={{marginLeft:"3.8em", height:"4em"}} onClick={() => setListOpen(!listOpen)} 
+     
+     
+     />
       <ul className={`sidebar_list ${listOpen ? "sidebar_list_active" : ""}`}>
         {colors.map((item, index) => (
           <li

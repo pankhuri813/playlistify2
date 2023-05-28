@@ -14,6 +14,7 @@ import Random from "./components/RadomVideos/Random"
 import Footer from "./components/Footer/Footer";
 import Blog from "./components/Blogpage/Blog";
 import Note from './components/Notes/NoteMain';
+import Playlist from './components/PeronalPlaylist/Playlist'
 import { useState, useEffect } from "react";
 
 
@@ -58,6 +59,7 @@ function App() {
       <Route path="/random" element={<Random />} />
      <Route path="/blog" element={<Blog />}/>
         <Route path="/notes" element ={<Note />} />
+        <Route path="/playlist" element={<Playlist />} />
 
 
        <Route path="/potrait" element={<Kathak name="Potrait" link="PLnWaXZaVfDBee0conbZOBdJfZLlDcU9im" />} />
