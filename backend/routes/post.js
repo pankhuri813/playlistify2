@@ -136,65 +136,65 @@ router.post('/add-user', async (req, res) => {
 
    
       
-    // router.put('/save-notes/:id', async (req, res) => {
-    //   const {  noteId, noteTime, updatedNote, color } = req.body;
-    //   console.log(req.body);
+    router.put('/save-notes/:id', async (req, res) => {
+      const {  noteId, noteTime, updatedNote, color } = req.body;
+      console.log(req.body);
     
-    //   try {
-    //     const user = await Favorite.findOne({ _id:req.params.id });
-    //     console.log(user)
-    //     const arr = user.notes || [ ];
-    //     arr.push({ noteId, noteTime, color, updatedText: updatedNote });
-    //     console.log(arr);
-    //     user.notes= arr;
-    //     const savedUser = await user.save();
-    //     if(savedUser) {
-    //       res.status(201).json({message : "sucess"})
-    //     }
-    //     else{
-    //       res.status(500).json({error : "try agains"})
-    //     }
-    //     // if (!user) {
-    //     //   return res.status(404).json({ message: "User not found" });
-    //     // }
+      try {
+        const user = await Favorite.findOne({ _id:req.params.id });
+        console.log(user)
+        const arr = user.notes || [ ];
+        arr.push({ noteId, noteTime, color, updatedText: updatedNote });
+        console.log(arr);
+        user.notes= arr;
+        const savedUser = await user.save();
+        if(savedUser) {
+          res.status(201).json({message : "sucess"})
+        }
+        else{
+          res.status(500).json({error : "try agains"})
+        }
+        // if (!user) {
+        //   return res.status(404).json({ message: "User not found" });
+        // }
     
-    //     // user.notes.push({ noteId, noteTime, color, updatedText: updatedNote });
-    //     // // const savedUser = await user.save();
-    //     // res.status(200).json(savedUser);
-    //   } catch (e) {
-    //     console.log(e);
-    //     // res.status(500).json({ message: "Internal Server Error" });
-    //   }
-    // });
+        // user.notes.push({ noteId, noteTime, color, updatedText: updatedNote });
+        // // const savedUser = await user.save();
+        // res.status(200).json(savedUser);
+      } catch (e) {
+        console.log(e);
+        // res.status(500).json({ message: "Internal Server Error" });
+      }
+    });
 
     
     
-    // router.put('/save-notes', async (req, res) => {
-    //   const { noteId, noteTime, updatedNote, color } = req.body;
-    //   console.log(req.body)
+    router.put('/save-notes', async (req, res) => {
+      const { noteId, noteTime, updatedNote, color } = req.body;
+      console.log(req.body)
     
-    //   try {
-    //     const user = await Favorite.findOne({ userId });
-    //     if (!user) {
-    //       return res.status(404).json({ error: 'User not found' });
-    //     }
+      try {
+        const user = await Favorite.findOne({ userId });
+        if (!user) {
+          return res.status(404).json({ error: 'User not found' });
+        }
     
-    //     const arr = user.notes || [];
-    //     arr.push({ noteId:noteId, noteTime:noteTime, color:color, updatedText: updatedNote });
+        const arr = user.notes || [];
+        arr.push({ noteId:noteId, noteTime:noteTime, color:color, updatedText: updatedNote });
     
-    //     user.notes = arr;
-    //     const savedUser = await user.save();
+        user.notes = arr;
+        const savedUser = await user.save();
     
-    //     if (savedUser) {
-    //       return res.status(201).json({ message: 'Success' });
-    //     } else {
-    //       return res.status(500).json({ error: 'Failed to save notes' });
-    //     }
-    //   } catch (error) {
-    //     console.error(error);
-    //     return res.status(500).json({ error: 'Internal server error' });
-    //   }
-    // });
+        if (savedUser) {
+          return res.status(201).json({ message: 'Success' });
+        } else {
+          return res.status(500).json({ error: 'Failed to save notes' });
+        }
+      } catch (error) {
+        console.error(error);
+        return res.status(500).json({ error: 'Internal server error' });
+      }
+    });
     
     
 

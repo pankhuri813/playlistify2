@@ -23,7 +23,7 @@ const VideoForm = ({ closeModal, setVideoData }) => {
 
     try {
       const response = await fetch(
-        `https://www.googleapis.com/youtube/v3/videos?id=${videoId}&key=AIzaSyDVrPj052cWFmMOYMRoUiwJeFzArkgpwLE&part=snippet`
+        `https://www.googleapis.com/youtube/v3/videos?id=${videoId}&key=${process.env.REACT_APP_YOUTUBE_API}&part=snippet`
       );
       const data = await response.json();
       if (data.items.length === 0) {
