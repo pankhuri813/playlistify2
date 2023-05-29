@@ -41,8 +41,8 @@ function NoteMain() {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("Note created:", data);
-        setNotes([...notes, data]);
+        console.log("Note created:", data.notes);
+        setNotes(data.notes);
       })
       .catch((error) => {
         console.log("Error creating note:", error);

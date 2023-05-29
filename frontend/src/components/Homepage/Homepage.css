@@ -162,7 +162,7 @@
 .types-item {
   position: absolute;
   top: 13.88rem;
-  left: 3.3em;
+  left: 3.3vw;
   width: 23.31rem;
   height: 21.63rem;
   object-fit: cover;
@@ -171,10 +171,10 @@
 }
 .types-inner,
 .types-item {
-  left: 62rem;
+  left: 70vw;
 }
 .types-inner {
-  left: 33rem;
+  left: 37vw;
 }
 .types-child1 {
   position: absolute;
@@ -252,7 +252,7 @@
     background-color: #EEDBDB;
     height: 21rem;
     width: 23.5rem;
-    left: 33.31rem;
+    left: 38vw;
     top: 85rem;
   }
 
@@ -261,7 +261,7 @@
     background-color: #EEDBDB;
     height: 21rem;
     width: 23.5rem;
-    left: 2.3100000000000005rem;
+    left: 4vw;
     top: 85rem;
   }
 
@@ -270,7 +270,7 @@
     background-color: #EEDBDB;
     height: 21rem;
     width: 23.5rem;
-    left: 64.25rem;
+    left: 71vw;
     top: 85rem;
   }
 
@@ -280,7 +280,7 @@
     height: 7rem;
     width: 8rem;
     top: 80rem;
-    left: 10rem;
+    left: 12vw;
     border-radius: 100%;
   }
   .circle-2{
@@ -289,7 +289,7 @@
     height: 7rem;
     width: 8rem;
     top: 80rem;
-    left: 41rem;
+    left: 46vw;
     border-radius: 100%;
   }
   .circle-3{
@@ -298,7 +298,7 @@
     height: 7rem;
     width: 8rem;
     top: 80rem;
-    left: 72rem;
+    left: 79vw;
     border-radius: 100%;
   }
 

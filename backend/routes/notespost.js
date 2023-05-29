@@ -41,25 +41,26 @@ router.delete('/notes/:userId', (req,res) => {
 })
 
 
-
-router.put('/notes/:id', (req, res) => {
-  const { id } = req.params;
+// PUT REQUEST FOR NOTES
+router.put('/notes/:userId', (req, res) => {
+  const {userId } = req.params;
   const { noteId, updatedText } = req.body;
 
-  Notes.findById(id)
-    .then((note) => {
-      note.notes.forEach((noteObj) => {
-        if (noteObj.noteId === noteId) {
-          noteObj.updatedText = updatedText;
+  Notes.findOneAndUpdate(
+    
+      {
+       userId,
+       "notes._id" : noteId
+      },
+      {
+        $set:  {
+          "notes.$.text": updatedText
         }
-      });
-
-      note
-        .save()
-        .then((updatedNote) => res.json(updatedNote))
+      },
+     {new: true}
+  )
+  .then((updatedNote) => res.json(updatedNote.notes))
         .catch((error) => res.status(400).json('Error: ' + error));
-    })
-    .catch((error) => res.status(400).json('Error: ' + error));
 });
 
 

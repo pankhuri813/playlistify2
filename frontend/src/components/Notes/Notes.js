@@ -44,13 +44,14 @@ function Note(props) {
       ...props.note,
       text: textValue,
     };
+    const userId = sessionStorage.getItem('sub')
 
-    fetch(`${process.env.REACT_APP_BACKEND_URL}/notes/${props.note.id}`, {
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/notes/${userId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ noteId: props.note.noteId, updatedNote }),
+      body: JSON.stringify({ noteId: props.note._id, updatedText: textValue }),
     })
       .then((response) => response.json())
       .then((data) => {

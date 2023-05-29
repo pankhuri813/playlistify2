@@ -10,7 +10,7 @@ function NoteContainer(props) {
   const notes = props.notes;
 
   return (
-    <div className="note-container">
+    <div className="note-container custom-scroll">
       <h2>Notes</h2>
       <div className="note-container_notes custom-scroll">
         {notes.length > 0 ? (
