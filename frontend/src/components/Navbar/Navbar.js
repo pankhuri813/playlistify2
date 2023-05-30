@@ -45,7 +45,7 @@ function Navbar() {
         </Link>
         <Link to="/favoritelist">
          <div className='wishlist'>
-            {totalItems}
+            {totalItems }
           </div>
           <img className="love-icon" alt="" src="https://res.cloudinary.com/dqkwom77k/image/upload/v1683790007/pokweurgf_wzd8c9.png" />
           {/* <span className='tooltiptext'>Favorites</span> */}

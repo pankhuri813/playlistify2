@@ -11,11 +11,11 @@
 }
 .blog-text{
   position: absolute;
-    top: 7.7rem;
+    top: 8.8vw;
     background-color: #ece3e3;
     left: 46rem;
     width: 45vw;
-    height: 38.7rem;
+    height: 43vw;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 .blogtext-heading{
