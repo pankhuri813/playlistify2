@@ -1,10 +1,5 @@
+# <span style="font-size: 32px" >Playlistify</span>
 
-Playlistify2
-
-Figma design: https://www.figma.com/file/iziZ06r7ZnC4GkQj2vWp6W/Capstone-Project?type=design&node-id=0-1&t=JqsIpOEmDReqzx7l-0
-
-# <span style="font-size: 32px;">Playlistify</span>
-![Playlistify Logo](./images/logo.png)
 
 Playlistify is a user-friendly and aesthetically pleasing web application designed to help users discover and create YouTube playlists for the skills they want to learn. Whether you're interested in coding, cooking, photography, or any other subject, Playlistify has got you covered. With its wide range of curated playlists and the ability to create your own, as well as the option to take notes, Playlistify offers a comprehensive learning experience.
 
@@ -19,17 +14,40 @@ Playlistify is a user-friendly and aesthetically pleasing web application design
 - **User-friendly Interface:** Playlistify boasts a sleek and intuitive design that enhances user experience. Enjoy a visually appealing interface that keeps you engaged and motivated throughout your learning journey.
 
 - **Recommendation Engine:** Receive personalized playlist recommendations based on your interests and previous usage patterns. Playlistify adapts to your preferences, ensuring that you discover new content relevant to your learning goals.
+# <h2> Welcome page</h2>
 
-## Screenshots
+![Welcome Page](https://res.cloudinary.com/dqy3zkb5n/image/upload/v1685121569/ezgif.com-video-to-gif_1_wszaao.gif)
+> This is the welcome page, once you login here you'll reach to the homepage next.
 
-![Screenshot 1](./images/screenshot1.png)
-> Discover curated playlists for various skills and topics.
+# <h2> Homepage</h2>
 
-![Screenshot 2](./images/screenshot2.png)
-> Create custom playlists and take notes while watching videos.
+![Homepage](https://res.cloudinary.com/dqy3zkb5n/image/upload/v1685118514/ezgif.com-optimize_eikcan.gif)
+> This page contains all the details of how and what is the purpose of this website. You'll find different categories also here.
 
-![Screenshot 3](./images/screenshot3.png)
-> Get personalized playlist recommendations based on your interests.
+# <h2> Blog Page</h2>
+
+![Blog page](https://res.cloudinary.com/dqy3zkb5n/image/upload/v1685118473/ezgif.com-video-to-gif_ptnxol.gif)
+> This is a blog page I wrote to tell how we could use youtube in a beneficial way that could empower us acquire new skills.
+
+# <h2> Top Ten Videos</h2>
+
+![Top ten videos](https://res.cloudinary.com/dqy3zkb5n/image/upload/v1685118429/top10_AdobeExpress_ivr2jm.gif)
+> This page will show you the most veiwed videos on youtube currently as well as will provide you the no. of views on that partiular video on hover. And onclick could direct you to youtube to watch that video.
+
+# <h2> Kathak Page</h2>
+
+![Kathak page](https://res.cloudinary.com/dqy3zkb5n/image/upload/v1685118816/KathakPage_AdobeExpress_y1yuaj.gif)
+> This page contains a suggested playlist for that particular skill, as well as gives an option to add your favorite playlist from youtube also to your database.
+
+# <h2> Notes Page</h2>
+
+![Notes Page](https://res.cloudinary.com/dqy3zkb5n/image/upload/v1685118372/notesfinal_AdobeExpress_zuacs5.gif)
+> When you are learning something you want to add notes as well side by side isn't it? Well then here you got it! Make you learning experience better by taking notes which will be stored with your database and you can access them whenever you want!
+
+# <h2> Favorite List</h2>
+
+![Favorite List](https://res.cloudinary.com/dqy3zkb5n/image/upload/v1685117889/favoritelist_AdobeExpress_s2oxq8.gif)
+> Whatever playlist you favorited will be displayed on this page and you can just simply access them when you desire, and watch it here as well with a user-friendly ui.
 
 ## Getting Started
 
@@ -72,35 +90,4 @@ We would like to thank the following resources and libraries for their valuable 
 For any inquiries or support, please reach out to the Playlistify team at playlistify@example.com. We are always here to help and answer any questions you may have.
 
 Happy learning with Playlistify! 🎧📚
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-When you want to learn something, you go on youtube. But searching there is a daunting task because it feels like there are so many videos as you scroll through them all, which one should you watch? And even if you know one or two that are really good, how can you find them automatically?
-So here’s an app that might help you find the most relevant playlist for your needs. The purpose of this website is to give you the most relevant videos for your interests and you can even organise your own favorite playlist of your choice  in a way customized way here as well.
 
